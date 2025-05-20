@@ -119,3 +119,21 @@ ul li {
     padding-left: 24px;
     margin-bottom: 8px;
 } /* the image of the bullet point */
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Playfair", serif;
+    font-weight: 300;
+    font-size: 20px;
+    font-style: normal;
+    background-image: url('../images/bgp.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover; /* or 'contain' depending on look */
+    background-attachment: fixed; /* optional for scroll effect */
+    background-color: #faf3e0; 
+    font-variation-settings:
+      "wdth" 100;
+    
+  }
