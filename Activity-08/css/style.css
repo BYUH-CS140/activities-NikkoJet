@@ -1,0 +1,139 @@
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fefefc;
+    color: #333; 
+} /* I added and set a clean, readable font and improve my spacing and background for more organized reading */
+
+header {
+    background-color: #f8e4c9;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+} /*I put all the text in the center in the header to make it more like it's easy to access and looks like a web */
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #5a3e2b;
+}
+
+header h2 {
+    margin-top: 10px;
+    font-weight: normal;
+    font-size: 1.5em;
+    color: #7a563c;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    gap: 30px;
+} /* For this one, I asked AI to help me navigation list to center the items with spacing for clean and good web */
+
+nav a {
+    text-decoration: none;
+    color: #5a3e2b;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #b85d38;
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+} /* Over here too, in order to maximize the text width and padding to the center to improve overall readability like a good web */
+
+section {
+    margin-bottom: 40px;
+}
+
+h2, h3 {
+    color: #5a3e2b;
+}
+
+img {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+ul, ol {
+    margin-left: 40px;
+}
+
+mark {
+    background-color: #ffe0a3;
+    padding: 0 4px;
+} /* Styling changed to a more tone that's in the same pallete as the color of the book to make atone resemble to a highlight*/
+
+iframe {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #f8e4c9;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 2px solid #ddd;
+}
+
+blockquote {
+    font-style: italic;
+    color: #444;
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+cite {
+    display: block;
+    margin-top: 10px;
+    color: #7a563c;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    background: url('../images/mouse.png') no-repeat left center;
+    background-size: 16px 16px;
+    padding-left: 24px;
+    margin-bottom: 8px;
+} /* the image of the bullet point */
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Playfair", serif;
+    font-weight: 300;
+    font-size: 20px;
+    font-style: normal;
+    background-image: url('../images/bgp.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover; /* or 'contain' depending on look */
+    background-attachment: fixed; /* optional for scroll effect */
+    background-color: #faf3e0; 
+    font-variation-settings:
+      "wdth" 100;
+    
+  }
