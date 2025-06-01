@@ -55,12 +55,12 @@ main {
   padding: 50px;
 }
 
-#garden {
+#garden { /* added # to garden*/
   border: 5px solid brown;
   border-radius: 30px;
   box-shadow: 5px 5px 15px grey;
   height: 30px; /*added the unit px in 30*/
-  width: 30%;
+  width: 30px; /*changed the unit to px*/
 }
 
 section {
