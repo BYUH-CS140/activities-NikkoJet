@@ -59,8 +59,11 @@ main {
   border: 5px solid brown;
   border-radius: 30px;
   box-shadow: 5px 5px 15px grey;
-  height: 30px; /*added the unit px in 30*/
-  width: 30px; /*changed the unit to px*/
+  width: 100%; /*changed the width to 100*/
+  max-width: 300px; /*added this max-width*/
+  height: auto; /*changed to auto. I asked AI for help, since if im going to just put 30 it'll be like a small cirle*/
+  display: block; /*added this one too*/
+  margin: 20px 0; /*added this one too*/
 }
 
 section {
