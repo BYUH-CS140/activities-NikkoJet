@@ -1,12 +1,19 @@
 .grid-container {
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 2fr 1fr 2fr;
-    background-color:  rgb(14, 63, 239);
+    grid-template-columns: 1fr 2fr 1fr 2fr; /* 4 columns */
+    background-color: rgb(14, 63, 239);
     padding: 10px;
 }
-.grid-item:first-child {grid-column: 1/6;}
-.grid-item:last-child {grid-column: 1/6;}
+
+.grid-item:first-child {
+    grid-column: 1 / 5; /* span all 4 columns */
+}
+
+.grid-item:last-child {
+    grid-column: 1 / 5; /* span all 4 columns */
+}
+
 .grid-item {
     background-color: rgb(248, 234, 42);
     padding: 20px;
