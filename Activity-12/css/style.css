@@ -1,0 +1,13 @@
+.grid-container {
+    display: grid;
+    gap: 10px;
+    background-color: aquamarine;
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: blue;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+}
