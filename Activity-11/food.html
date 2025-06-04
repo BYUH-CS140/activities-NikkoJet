@@ -7,22 +7,24 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>My Favorite Food</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="book.html">Book Summary</a></li>
-        <li><a href="place.html">My Home Place</a></li>
-        <li><a href="food.html">Favorite Food</a></li>
+
+  <header id="page-header">
+    <h1 class="title">My Favorite Food</h1>
+    <nav id="main-nav">
+      <ul class="nav-list">
+        <li><a href="index.html"><img src="images/user-icon.png" class="nav-icon" alt="Home Icon"> Home</a></li>
+        <li><a href="book.html"><img src="images/book-icon.png" class="nav-icon" alt="Book Icon"> Book</a></li>
+        <li><a href="place.html"><img src="images/place-icon.png" class="nav-icon" alt="Place Icon"> Place</a></li>
+        <li><a href="food.html"><img src="images/food-icon.png" class="nav-icon" alt="Food Icon"> Food</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section>
-        <img src="images/porksinigang.jpg" alt="Pork Sinigang">
+  <main class="card-grid single-grid">
+
+    <div class="card">
       <h2>Pork Sinigang</h2>
+      <img src="images/porksinigang.jpg" alt="Pork Sinigang" class="card-image small-img">
       <p>This hearty dish is my favorite comfort food. Here's what I use:</p>
       <ul>
         <li>500g pork belly (cut into chunks)</li>
@@ -42,20 +44,22 @@
         <li>Salt to taste (optional)</li>
       </ul>
       <p>It’s delicious, easy to cook, and perfect for family dinners!</p>
-    </section>
+    </div>
 
-    <section>
+    <div class="card">
       <h3><u>How to cook Pork Sinigang by Panlasang Pinoy</u></h3>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/GCo4fg_SiR4"
-        title="How to Cook Pork Sinigang" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen> 
+        title="How to Cook Pork Sinigang"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
       </iframe>
-    </section>
+    </div>
+
   </main>
 
   <footer>
     <p>&copy;<small>2025 My Personal Website. All rights reserved.</small></p>
   </footer>
+
 </body>
 </html>
