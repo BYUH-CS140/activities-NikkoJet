@@ -1,12 +1,14 @@
 .grid-container {
     display: grid;
     gap: 10px;
-    background-color: aquamarine;
+    grid-template-columns: 1fr 2fr 1fr 2fr;
+    background-color:  rgb(14, 63, 239);
     padding: 10px;
 }
-
+.grid-item:first-child {grid-column: 1/6;}
+.grid-item:last-child {grid-column: 1/6;}
 .grid-item {
-    background-color: blue;
+    background-color: rgb(248, 234, 42);
     padding: 20px;
     text-align: center;
     font-size: 1.2rem;
