@@ -1,11 +1,11 @@
-/* 1 – Global Setup */
+/* 1 â€“ Global Setup */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 2 – Base Page Styling */
+/* 2 â€“ Base Page Styling */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   font-weight: 300;
@@ -24,7 +24,7 @@ body {
   font-variation-settings: "wdth" 100;
 }
 
-/* 3 – Header Banner */
+/* 3 â€“ Header Banner */
 #page-header {
   background-image: url("pattern-bg.png");
   background-size: cover;
@@ -47,7 +47,7 @@ body {
   color: #eeeeee;
 }
 
-/* 4 – Navigation Bar */
+/* 4 â€“ Navigation Bar */
 #main-nav {
   background-color: #5a3e2b;
   padding: 0.5rem 0;
@@ -131,14 +131,14 @@ body {
   display: block;
 }
 
-/* 5 – Main Content */
+/* 5 â€“ Main Content */
 main {
   padding: 40px 20px;
   max-width: 900px;
   margin: auto;
 }
 
-/* 6 – Section Styling */
+/* 6 â€“ Section Styling */
 section {
   margin-bottom: 40px;
 }
@@ -163,7 +163,7 @@ ul li {
   margin-bottom: 8px;
 }
 
-/* 7 – Resources Section */
+/* 7 â€“ Resources Section */
 .resources {
   background-color: #ffffff;
   padding: 1rem;
@@ -176,9 +176,9 @@ ul li {
   margin-bottom: 0.5rem;
 }
 
-/* 8 – Miscellaneous Elements */
+/* 8 â€“ Miscellaneous Elements */
 
-/* Profile Picture – keep small */
+/* Profile Picture â€“ keep small */
 img.profile-pic {
   display: block;
   max-width: 250px;
@@ -221,7 +221,7 @@ footer {
   border-top: 2px solid #ddd;
 }
 
-/* 9 – Card Grid Layout */
+/* 9 â€“ Card Grid Layout */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -229,7 +229,7 @@ footer {
   margin-top: 2rem;
 }
 
-/* 10 – Card Box Style */
+/* 10 â€“ Card Box Style */
 .card {
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 10px;
@@ -257,6 +257,7 @@ footer {
 .card a:hover {
   text-decoration: underline;
 }
+
 .card-image {
   width: 100%;
   height: 150px;
