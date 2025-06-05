@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Personal Blog: Nikko Cayaba</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header id="page-header">
@@ -12,9 +12,7 @@
     <nav id="main-nav">
       <ul class="nav-list">
         <li class="dropdown">
-          <a href="#">
-            <img src="images/user-icon.png" alt="About Icon" class="nav-icon"> About Me ▾
-          </a>
+          <a href="#"><img src="images/user-icon.png" alt="About Icon" class="nav-icon"> About Me ▾</a>
           <ul class="dropdown-menu">
             <li><a href="index.html">Personal Bio</a></li>
             <li><a href="book.html">Book Summary</a></li>
@@ -30,47 +28,57 @@
   </header>
 
   <main>
-    <img src="images/profile.JPG" alt="About me" class="profile-pic">
-    <section>
-      <h2>Aloha! My name is <strong>Nikko</strong>. I'm 23 years old and I'm from the Philippines.</h2>
-      <p>The purpose of this website is to help you get to know more about me, where I came from, my favorite book, and how to make my favorite food.</p>
-      <p>I am a student here in <strong>Brigham Young University–Hawaii</strong>, majoring in Computer Science, and I’m taking Visual Arts and Entrepreneurship as my minors.</p>
-      <p>Growing up, art was one of the things I loved doing. I had a passion to become both an architect and engineer. In fact, I studied Architecture at the University of the Philippines–Diliman, one of the top universities in the Philippines.</p>
-      <p>When I got here, I pursued my love for Computer Science. Even though the majors are different, the purpose remains the same.</p>
-    </section>
-  
-    <section class="card-grid">
+    <!-- FLEXBOX SECTION -->
+    <section class="flex-container">
+      <div class="left-column">
+        <img src="images/profile.JPG" alt="About me" class="profile-pic">
+        <h2>Aloha! My name is <strong>Nikko</strong>. I'm 23 years old and I'm from the Philippines.</h2>
+        <p>The purpose of this website is to help you get to know more about me, where I came from, my favorite book, and how to make my favorite food.</p>
+        <p>I am a student here in <strong>Brigham Young University–Hawaii</strong>, majoring in Computer Science, and I’m taking Visual Arts and Entrepreneurship as my minors.</p>
+        <p>Growing up, art was one of the things I loved doing. I had a passion to become both an architect and engineer. In fact, I studied Architecture at the University of the Philippines–Diliman, one of the top universities in the Philippines.</p>
+        <p>When I got here, I pursued my love for Computer Science. Even though the majors are different, the purpose remains the same.</p>
+      </div>
 
-      <div class="card">
-        <img src="images/porcupine.jpg" alt="Book Image" class="card-image">
-        <h3>Book Summary</h3>
-        <ul>
-          <li>Discover how to love difficult people through the book <strong><mark>“How to Hug a Porcupine”</mark></strong> by Debbie Ellis.</li>
-        </ul>
-        <a href="book.html">Read more...</a>
-      </div>
-    
-      <div class="card">
-        <img src="images/tumauini.jpg" alt="Place Image" class="card-image">
-        <h3>My Home Place</h3>
-        <ul>
-          <li>I live in a peaceful municipality of Tumauini known for its community values, scenic views, and warm-hearted Tumauinians.</li>
-        </ul>
-        <a href="place.html">See more...</a>
-      </div>
-    
-      <div class="card">
-        <img src="images/porksinigang.jpg" alt="Food Image" class="card-image">
-        <h3>My Favorite Food</h3>
-        <ul>
-          <li>I enjoy cooking delicious meals. One of my favorites is <mark>Pork Sinigang</mark>, made with savory spices and fresh ingredients.</li>
-        </ul>
-        <a href="food.html">Learn the ingredients...</a>
+      <div class="right-column">
+        <div class="card-grid">
+          <div class="card">
+            <img src="images/porcupine.jpg" alt="Book Image" class="card-image">
+            <h3>Book Summary</h3>
+            <ul>
+              <li>Discover how to love difficult people through the book <strong><mark>“How to Hug a Porcupine”</mark></strong> by Debbie Ellis.</li>
+            </ul>
+            <a href="book.html">Read more...</a>
+          </div>
+
+          <div class="card">
+            <img src="images/tumauini.jpg" alt="Place Image" class="card-image">
+            <h3>My Home Place</h3>
+            <ul>
+              <li>I live in a peaceful municipality of Tumauini known for its community values, scenic views, and warm-hearted Tumauinians.</li>
+            </ul>
+            <a href="place.html">See more...</a>
+          </div>
+
+          <div class="card">
+            <img src="images/porksinigang.jpg" alt="Food Image" class="card-image">
+            <h3>My Favorite Food</h3>
+            <ul>
+              <li>I enjoy cooking delicious meals. One of my favorites is <mark>Pork Sinigang</mark>, made with savory spices and fresh ingredients.</li>
+            </ul>
+            <a href="food.html">Learn the ingredients...</a>
+          </div>
+        </div>
       </div>
     </section>
-    
+
+    <!-- FLOATED IMAGE SECTION -->
+    <section class="float-text">
+      <img src="images/profile.JPG" alt="Floated Profile" class="float-img">
+      <p>Hello! I’m Nikko. This is a floated image section with text wrapping around my photo. I enjoy combining creativity and technology in all that I do. Whether it’s designing a web page or illustrating on paper, expression is my favorite form of communication.</p>
+      <p>Studying in BYU–Hawaii has been a blessing. It helped me appreciate both my Filipino roots and the international opportunities I now have. Through coding and design, I want to inspire others to build, create, and share goodness in the world.</p>
+    </section>
   </main>
-  
+
   <footer>
     <p>&copy; 2025 My Personal Website. All rights reserved.</p>
   </footer>
