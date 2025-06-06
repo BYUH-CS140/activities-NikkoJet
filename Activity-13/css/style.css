@@ -1,0 +1,332 @@
+/* 1 – Global Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2 – Base Page Styling */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.6;
+  background-color: #f2f2f2;
+  background-image: url('../images/bgp.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3 – Header Banner */
+#page-header {
+  background-image: url("pattern-bg.png");
+  background-size: cover;
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+}
+
+.title {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+}
+
+#page-header h2 {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 1.5em;
+  color: #eeeeee;
+}
+
+/* 4 – Navigation Bar */
+#main-nav {
+  background-color: #5a3e2b;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list > li {
+  position: relative;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-list a:focus {
+  outline: 2px dashed #ffffff;
+  background-color: #6b4a33;
+  border-radius: 4px;
+}
+
+.nav-list li:hover {
+  background-color: #ffffff;
+}
+
+.nav-list li:hover a {
+  color: #5a3e2b;
+}
+
+/* Icon Support */
+.nav-list img,
+.nav-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 6px;
+  border: none;
+  box-shadow: none;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  padding: 0.5rem 0;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  z-index: 100;
+  min-width: 160px;
+}
+
+.dropdown-menu li {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a {
+  color: #5a3e2b;
+  display: block;
+}
+
+.nav-list .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* 5 – Main Content */
+main {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* 6 – Section Styling */
+section {
+  margin-bottom: 40px;
+}
+
+h2, h3 {
+  color: #5a3e2b;
+}
+
+ul, ol {
+  margin-left: 40px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  background: url('../images/mouse.png') no-repeat left center;
+  background-size: 16px 16px;
+  padding-left: 24px;
+  margin-bottom: 8px;
+}
+
+/* 7 – Resources Section */
+.resources {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 6px;
+  width: 60%;
+  margin: 2rem auto;
+}
+
+.resources li {
+  margin-bottom: 0.5rem;
+}
+
+/* 8 – Miscellaneous Elements */
+img.profile-pic {
+  display: block;
+  max-width: 250px;
+  height: auto;
+  margin: 20px auto;
+  border: 2px solid #ccc;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+mark {
+  background-color: #ffe0a3;
+  padding: 0 4px;
+}
+
+iframe {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  border: none;
+  border-radius: 8px;
+}
+
+blockquote {
+  font-style: italic;
+  color: #444;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+cite {
+  display: block;
+  margin-top: 10px;
+  color: #7a563c;
+}
+
+footer {
+  background-color: #f8e4c9;
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 2px solid #ddd;
+}
+
+/* 9 – Card Grid Layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.single-grid {
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
+/* 10 – Card Box Style */
+.card {
+  background-color: #ffffffdd;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  color: #5a3e2b;
+  margin-bottom: 0.5rem;
+}
+
+.card a {
+  color: #5a3e2b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.card-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.small-img {
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+/* 11 – Flexbox Two-Column Layout */
+.flex-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.left-column, .right-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* 12 – Floated Image Section */
+.float-text {
+  background-color: #ffffffcc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 900px;
+  overflow: auto;
+}
+
+.float-img {
+  float: left;
+  margin: 0 20px 15px 0;
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 13 – Responsive Navigation */
+@media (max-width: 600px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nav-list > li {
+    width: 90%;
+    text-align: center;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
