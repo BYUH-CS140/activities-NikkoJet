@@ -1,229 +1,331 @@
-/* Global Reset */
+/* 1 – Global Setup */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body and Background */
+/* 2 – Base Page Styling */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-weight: 300;
   font-size: 20px;
-  background: url('../images/bgp.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #FFA500; /* orange text */
   line-height: 1.6;
-  min-height: 100vh;
-  margin: 0;
-}
-
-/* Sidebar Navigation */
-#page-header {
-  background-color: rgba(0, 0, 0, 0.85);
-  width: 220px;
-  min-height: 100vh;
-  padding: 2rem 1rem;
-  box-sizing: border-box;
+  background-color: #f2f2f2;
+  background-image: url('../images/bgp.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #333;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  color: #FFA500;
+}
+
+/* 3 – Header Banner */
+#page-header {
+  background-image: url("pattern-bg.png");
+  background-size: cover;
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
 }
 
 .title {
-  font-weight: 700;
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
-  color: #FFA500;
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+}
+
+#page-header h2 {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 1.5em;
+  color: #eeeeee;
+}
+
+/* 4 – Navigation Bar */
+#main-nav {
+  background-color: #5a3e2b;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .nav-list {
   list-style: none;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
-.nav-list li {
-  margin-bottom: 1rem;
+.nav-list > li {
+  position: relative;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-list a {
   text-decoration: none;
-  color: #FFA500;
-  font-weight: 600;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
   display: flex;
   align-items: center;
-  padding: 0.5rem 0.75rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  gap: 0.5rem;
+  transition: color 0.3s, background-color 0.3s;
 }
 
-.nav-list a:hover,
 .nav-list a:focus {
-  background-color: #ff8c00; /* a deeper orange on hover */
-  color: #fff;
-  outline: none;
+  outline: 2px dashed #ffffff;
+  background-color: #6b4a33;
+  border-radius: 4px;
 }
 
+.nav-list li:hover {
+  background-color: #ffffff;
+}
+
+.nav-list li:hover a {
+  color: #5a3e2b;
+}
+
+/* Icon Support */
+.nav-list img,
 .nav-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  filter: invert(62%) sepia(77%) saturate(503%) hue-rotate(4deg) brightness(99%) contrast(95%);
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 6px;
+  border: none;
+  box-shadow: none;
 }
 
-/* Dropdown styling */
-.dropdown {
-  position: relative;
-}
-
-.dropdown > a[aria-haspopup="true"]::after {
-  content: " ▾";
-  font-weight: bold;
-  margin-left: 5px;
-}
-
+/* Dropdown Menu */
 .dropdown-menu {
-  list-style: none;
-  padding-left: 1rem;
-  margin-top: 0.5rem;
   display: none;
-  flex-direction: column;
-}
-
-.dropdown:hover > .dropdown-menu,
-.dropdown:focus-within > .dropdown-menu {
-  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  padding: 0.5rem 0;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  z-index: 100;
+  min-width: 160px;
 }
 
 .dropdown-menu li {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a {
+  color: #5a3e2b;
+  display: block;
+}
+
+.nav-list .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* 5 – Main Content */
+main {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* 6 – Section Styling */
+section {
+  margin-bottom: 40px;
+}
+
+h2, h3 {
+  color: #5a3e2b;
+}
+
+ul, ol {
+  margin-left: 40px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  background: url('../images/mouse.png') no-repeat left center;
+  background-size: 16px 16px;
+  padding-left: 24px;
+  margin-bottom: 8px;
+}
+
+/* 7 – Resources Section */
+.resources {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 6px;
+  width: 60%;
+  margin: 2rem auto;
+}
+
+.resources li {
   margin-bottom: 0.5rem;
 }
 
-.dropdown-menu a {
-  font-weight: 400;
-  font-size: 0.9rem;
-  padding-left: 0;
-  color: #FFA500;
+/* 8 – Miscellaneous Elements */
+img.profile-pic {
+  display: block;
+  max-width: 250px;
+  height: auto;
+  margin: 20px auto;
+  border: 2px solid #ccc;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown-menu a:hover,
-.dropdown-menu a:focus {
-  color: #ff8c00;
-  background-color: transparent;
-  outline: none;
+mark {
+  background-color: #ffe0a3;
+  padding: 0 4px;
 }
 
-/* Main content pushed right to sidebar */
-main {
-  margin-left: 240px;
-  padding: 2rem 1rem;
-  max-width: 900px;
-  color: #FFA500;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
+iframe {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  border: none;
+  border-radius: 8px;
 }
 
-/* Card grid for homepage and other pages */
+blockquote {
+  font-style: italic;
+  color: #444;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+cite {
+  display: block;
+  margin-top: 10px;
+  color: #7a563c;
+}
+
+footer {
+  background-color: #f8e4c9;
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 2px solid #ddd;
+}
+
+/* 9 – Card Grid Layout */
 .card-grid {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .single-grid {
   grid-template-columns: 1fr;
+  justify-content: center;
 }
 
-/* Cards */
+/* 10 – Card Box Style */
 .card {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  color: #FFA500;
+  background-color: #ffffffdd;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.card h2, .card h3, .card h4 {
-  margin-bottom: 1rem;
-  color: #FFA500;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  color: #5a3e2b;
+  margin-bottom: 0.5rem;
+}
+
+.card a {
+  color: #5a3e2b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
 }
 
 .card-image {
   width: 100%;
-  border-radius: 10px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
   margin-bottom: 1rem;
 }
 
 .small-img {
-  max-width: 300px;
+  max-width: 200px;
   height: auto;
   display: block;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem auto;
 }
 
-/* Float text section in homepage */
+/* 11 – Flexbox Two-Column Layout */
+.flex-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.left-column, .right-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* 12 – Floated Image Section */
 .float-text {
-  margin-top: 3rem;
-  overflow: hidden;
-  color: #FFA500;
+  background-color: #ffffffcc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 900px;
+  overflow: auto;
 }
 
 .float-img {
   float: left;
-  width: 150px;
+  margin: 0 20px 15px 0;
+  width: 200px;
   height: auto;
-  margin-right: 1rem;
-  border-radius: 50%;
-  border: 3px solid #FFA500;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Footer styling */
-footer {
-  margin-left: 240px;
-  padding: 1rem 0;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.85);
-  color: #FFA500;
-  font-size: 0.9rem;
-  border-top: 1px solid #FFA500;
-}
-
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  #page-header {
-    width: 180px;
-    padding: 1.5rem 1rem;
-  }
-  main {
-    margin-left: 200px;
-  }
-  .card-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
+/* 13 – Responsive Navigation */
 @media (max-width: 600px) {
-  #page-header {
-    position: relative;
-    width: 100%;
-    min-height: auto;
-    flex-direction: row;
-    align-items: center;
-    padding: 1rem;
-  }
   .nav-list {
-    display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
   }
-  main {
-    margin-left: 0;
-    padding: 1rem;
+
+  .nav-list > li {
+    width: 90%;
+    text-align: center;
   }
+
   .card-grid {
     grid-template-columns: 1fr;
   }

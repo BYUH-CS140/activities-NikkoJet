@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Personal Blog: Nikko Cayaba</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <nav id="main-nav" aria-label="Main navigation">
-    <ul class="nav-list">
-      <li class="dropdown">
-        <a href="#" aria-haspopup="true" aria-expanded="false">
-          <img src="images/user-icon.png" alt="" class="nav-icon"> About Me ▾
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="index.html">Personal Bio</a></li>
-          <li><a href="book.html">Book Summary</a></li>
-          <li><a href="place.html">My Home Place</a></li>
-          <li><a href="food.html">Favorite Food</a></li>
-        </ul>
-      </li>
-      <li><a href="book.html"><img src="images/book-icon.png" alt="" class="nav-icon" /> Book</a></li>
-      <li><a href="place.html"><img src="images/place-icon.png" alt="" class="nav-icon" /> Place</a></li>
-      <li><a href="food.html"><img src="images/food-icon.png" alt="" class="nav-icon" /> Food</a></li>
-    </ul>
-  </nav>
-
   <header id="page-header">
     <h1 class="title">Welcome to Nikko's Personal Blog</h1>
+    <nav id="main-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li class="dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false">
+            <img src="images/user-icon.png" alt="" class="nav-icon" /> About Me ▾
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Personal Bio</a></li>
+            <li><a href="book.html">Book Summary</a></li>
+            <li><a href="place.html">My Home Place</a></li>
+            <li><a href="food.html">Favorite Food</a></li>
+          </ul>
+        </li>
+        <li><a href="book.html"><img src="images/book-icon.png" alt="" class="nav-icon" /> Book</a></li>
+        <li><a href="place.html"><img src="images/place-icon.png" alt="" class="nav-icon" /> Place</a></li>
+        <li><a href="food.html"><img src="images/food-icon.png" alt="" class="nav-icon" /> Food</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
+    <!-- FLEXBOX SECTION -->
     <section class="flex-container">
       <div class="left-column">
-        <img src="images/profile.JPG" alt="Portrait of Nikko" class="profile-pic">
+        <img src="images/profile.JPG" alt="Portrait of Nikko" class="profile-pic" />
         <h2>Aloha! My name is <strong>Nikko</strong>.</h2>
         <p>The purpose of this website is to help you get to know more about me, my home, favorite book, and how to make my favorite food.</p>
         <p>I am a student at <strong>Brigham Young University–Hawaii</strong>, majoring in Computer Science and minoring in Visual Arts and Entrepreneurship.</p>
@@ -43,7 +43,7 @@
       <div class="right-column">
         <div class="card-grid">
           <div class="card">
-            <img src="images/porcupine.jpg" alt="Cover of How to Hug a Porcupine" class="card-image">
+            <img src="images/porcupine.jpg" alt="Cover of How to Hug a Porcupine" class="card-image" />
             <h3>Book Summary</h3>
             <ul>
               <li>Learn to love difficult people through the book <strong><mark>“How to Hug a Porcupine”</mark></strong> by Debbie Ellis.</li>
@@ -52,7 +52,7 @@
           </div>
 
           <div class="card">
-            <img src="images/tumauini.jpg" alt="Photo of Tumauini" class="card-image">
+            <img src="images/tumauini.jpg" alt="Photo of Tumauini" class="card-image" />
             <h3>My Home Place</h3>
             <ul>
               <li>Tumauini is a peaceful municipality known for its scenic views and strong community values.</li>
@@ -61,7 +61,7 @@
           </div>
 
           <div class="card">
-            <img src="images/porksinigang.jpg" alt="Bowl of Pork Sinigang" class="card-image">
+            <img src="images/porksinigang.jpg" alt="Bowl of Pork Sinigang" class="card-image" />
             <h3>My Favorite Food</h3>
             <ul>
               <li><mark>Pork Sinigang</mark> is one of my favorites—savory, sour, and rich in Filipino flavor.</li>
@@ -72,9 +72,10 @@
       </div>
     </section>
 
+    <!-- FLOATED IMAGE SECTION -->
     <section class="float-text">
-      <img src="images/profile.JPG" alt="Nikko smiling" class="float-img">
-      <p>Hello! I’m Nikko. I enjoy combining creativity and technology in all that I do.</p>
+      <img src="images/profile.JPG" alt="Nikko smiling" class="float-img" />
+      <p>Hello! I’m Nikko. This is a floated image section with text wrapping around my photo. I enjoy combining creativity and technology in all that I do.</p>
       <p>BYU–Hawaii helped me appreciate both my Filipino roots and the global opportunities I now have. Through coding and design, I want to inspire others to build, create, and share goodness.</p>
     </section>
   </main>
