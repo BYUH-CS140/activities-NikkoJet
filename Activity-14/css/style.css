@@ -332,3 +332,62 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* 14 – Image Gallery Responsive Layout */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+@media (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 15 – Grid Template Layout Swap for Desktop */
+@media (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "nav header"
+      "nav main"
+      "nav footer";
+    grid-template-columns: 300px 1fr;
+  }
+
+  #main-nav {
+    grid-area: nav;
+    position: static;
+    top: auto;
+    left: auto;
+    height: auto;
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  #page-header { grid-area: header; }
+  main { grid-area: main; }
+  footer { grid-area: footer; }
+
+  /* Reset padding when nav becomes grid-based */
+  body {
+    padding-left: 0;
+  }
+}
+
