@@ -1,11 +1,11 @@
-/* 1 – Global Setup */
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 2 – Base Page Styling */
+/* Body styling */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   font-weight: 300;
@@ -18,44 +18,13 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: #333;
-  display: grid;
-  grid-template-areas:
-    "header"
-    "nav"
-    "main"
-    "footer";
 }
 
-/* 3 – Header Banner */
-#page-header {
-  grid-area: header;
-  background-image: url("pattern-bg.png");
-  background-size: cover;
-  color: #ffffff;
-  padding: 1rem;
-  text-align: center;
-  border-bottom: 2px solid #ddd;
-}
-
-.title {
-  margin: 0;
-  font-size: 2rem;
-  letter-spacing: 0.05em;
-}
-
-#page-header h2 {
-  margin-top: 10px;
-  font-weight: normal;
-  font-size: 1.5em;
-  color: #eeeeee;
-}
-
-/* 4 – Floating Sidebar Navigation */
+/* Floating Sidebar Navigation */
 #main-nav {
-  grid-area: nav;
   position: fixed;
-  top: 80px;
-  left: 50px;
+  top: 50px;
+  left: 20px;
   background-color: #222;
   padding: 1.5rem 1rem;
   border-radius: 15px;
@@ -93,12 +62,6 @@ body {
   transition: color 0.3s;
 }
 
-.nav-list a:focus {
-  outline: 2px dashed #fff;
-  background-color: #555;
-  border-radius: 8px;
-}
-
 .nav-list img,
 .nav-icon {
   width: 24px;
@@ -116,6 +79,7 @@ body {
   padding: 0.5rem 0;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  z-index: 100;
   min-width: 180px;
 }
 
@@ -133,15 +97,23 @@ body {
   display: block;
 }
 
-/* 5 – Main Content */
-main {
-  grid-area: main;
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
+/* Header */
+#page-header {
+  text-align: center;
+  margin-left: 250px;
+  padding: 2rem 1rem 1rem 1rem;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
 }
 
-/* 6 – Section Styling */
+/* Main layout */
+main {
+  margin-left: 250px;
+  padding: 20px;
+  max-width: 1000px;
+}
+
+/* Section styling */
 section {
   margin-bottom: 40px;
 }
@@ -150,100 +122,29 @@ h2, h3 {
   color: #5a3e2b;
 }
 
-ul, ol {
-  margin-left: 40px;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul li {
-  background: url('../images/mouse.png') no-repeat left center;
-  background-size: 16px 16px;
-  padding-left: 24px;
-  margin-bottom: 8px;
-}
-
-/* 7 – Resources Section */
-.resources {
-  background-color: #ffffff;
-  padding: 1rem;
-  border-radius: 6px;
-  width: 60%;
-  margin: 2rem auto;
-}
-
-.resources li {
-  margin-bottom: 0.5rem;
-}
-
-/* 8 – Miscellaneous Elements */
 img.profile-pic {
   display: block;
   max-width: 250px;
-  height: auto;
-  margin: 20px auto;
+  margin: 0 auto 20px;
   border: 2px solid #ccc;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
-mark {
-  background-color: #ffe0a3;
-  padding: 0 4px;
-}
-
-iframe {
-  display: block;
-  max-width: 100%;
-  margin: 0 auto;
-  border: none;
-  border-radius: 8px;
-}
-
-blockquote {
-  font-style: italic;
-  color: #444;
-  margin: 20px auto;
-  max-width: 700px;
-}
-
-cite {
-  display: block;
-  margin-top: 10px;
-  color: #7a563c;
-}
-
-footer {
-  grid-area: footer;
-  background-color: #f8e4c9;
-  text-align: center;
-  padding: 30px 20px;
-  border-top: 2px solid #ddd;
-}
-
-/* 9 – Card Grid Layout */
+/* Card grid */
 .card-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  padding: 2rem;
 }
 
-.single-grid {
-  grid-template-columns: 1fr;
-  justify-content: center;
-}
-
-/* 10 – Card Box Style */
 .card {
-  background-color: #ffffffdd;
+  background-color: #ffffffcc;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
@@ -253,7 +154,6 @@ footer {
 
 .card h3 {
   color: #5a3e2b;
-  margin-bottom: 0.5rem;
 }
 
 .card a {
@@ -274,27 +174,7 @@ footer {
   margin-bottom: 1rem;
 }
 
-.small-img {
-  max-width: 200px;
-  height: auto;
-  display: block;
-  margin: 0 auto 1rem auto;
-}
-
-/* 11 – Flexbox Two-Column Layout */
-.flex-container {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  padding: 2rem 0;
-}
-
-.left-column, .right-column {
-  flex: 1;
-  min-width: 300px;
-}
-
-/* 12 – Floated Image Section */
+/* Floated text section */
 .float-text {
   background-color: #ffffffcc;
   padding: 1.5rem;
@@ -313,44 +193,35 @@ footer {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* 13 – Desktop Grid Layout */
-@media (min-width: 1024px) {
-  body {
-    grid-template-columns: 250px 1fr;
-    grid-template-areas:
-      "header header"
-      "nav main"
-      "footer footer";
-  }
-
-  #main-nav {
-    position: static;
-    align-self: start;
-  }
-
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+/* Footer */
+footer {
+  background-color: #f8e4c9;
+  text-align: center;
+  padding: 30px 20px;
+  margin-left: 250px;
+  border-top: 2px solid #ddd;
 }
 
-/* 14 – Tablet Grid Layout */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* 15 – Mobile Gallery */
-@media (max-width: 767px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
+/* Responsive (mobile-first) */
+@media (max-width: 768px) {
   #main-nav {
     position: static;
     width: 100%;
     border-radius: 0;
     box-shadow: none;
     margin-bottom: 20px;
+  }
+
+  main, footer, #page-header {
+    margin-left: 0;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 }
