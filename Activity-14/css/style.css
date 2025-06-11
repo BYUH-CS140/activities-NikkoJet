@@ -18,12 +18,17 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: #333;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
 }
 
 /* 3 – Header Banner */
 #page-header {
+  grid-area: header;
   background-image: url("pattern-bg.png");
   background-size: cover;
   color: #ffffff;
@@ -45,8 +50,9 @@ body {
   color: #eeeeee;
 }
 
-/* 4 – Floating Side Navigation with Dropdown */
+/* 4 – Floating Sidebar Navigation */
 #main-nav {
+  grid-area: nav;
   position: fixed;
   top: 80px;
   left: 50px;
@@ -62,8 +68,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-list > li {
@@ -112,7 +116,6 @@ body {
   padding: 0.5rem 0;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  z-index: 100;
   min-width: 180px;
 }
 
@@ -132,8 +135,9 @@ body {
 
 /* 5 – Main Content */
 main {
+  grid-area: main;
   padding: 40px 20px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -212,6 +216,7 @@ cite {
 }
 
 footer {
+  grid-area: footer;
   background-color: #f8e4c9;
   text-align: center;
   padding: 30px 20px;
@@ -221,7 +226,7 @@ footer {
 /* 9 – Card Grid Layout */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
   padding: 2rem;
 }
@@ -308,8 +313,39 @@ footer {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* 13 – Responsive Navigation */
-@media (max-width: 600px) {
+/* 13 – Desktop Grid Layout */
+@media (min-width: 1024px) {
+  body {
+    grid-template-columns: 250px 1fr;
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "footer footer";
+  }
+
+  #main-nav {
+    position: static;
+    align-self: start;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 14 – Tablet Grid Layout */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 15 – Mobile Gallery */
+@media (max-width: 767px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
   #main-nav {
     position: static;
     width: 100%;
@@ -317,77 +353,4 @@ footer {
     box-shadow: none;
     margin-bottom: 20px;
   }
-
-  .nav-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-list > li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
 }
-/* 14 – Image Gallery Responsive Layout */
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-@media (min-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* 15 – Grid Template Layout Swap for Desktop */
-@media (min-width: 1024px) {
-  body {
-    display: grid;
-    grid-template-areas:
-      "nav header"
-      "nav main"
-      "nav footer";
-    grid-template-columns: 300px 1fr;
-  }
-
-  #main-nav {
-    grid-area: nav;
-    position: static;
-    top: auto;
-    left: auto;
-    height: auto;
-    box-shadow: none;
-    margin: 0;
-    border-radius: 0;
-  }
-
-  #page-header { grid-area: header; }
-  main { grid-area: main; }
-  footer { grid-area: footer; }
-
-  /* Reset padding when nav becomes grid-based */
-  body {
-    padding-left: 0;
-  }
-}
-
