@@ -55,6 +55,14 @@ body {
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   z-index: 999;
+  width: 200px; /* Added fixed width for consistent layout */
+}
+
+/* Added margin-left on main to avoid overlap with fixed nav on desktop */
+@media (min-width: 1024px) {
+  main {
+    margin-left: 240px; /* Adjust to nav width + padding */
+  }
 }
 
 .nav-list {
@@ -120,6 +128,11 @@ body {
   min-width: 180px;
 }
 
+/* Visible dropdown on hover (consider adding JS toggle for accessibility) */
+.nav-list .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 .dropdown-menu li {
   padding: 0.5rem 1rem;
   white-space: nowrap;
@@ -127,10 +140,6 @@ body {
 
 .dropdown-menu li a {
   color: #fff;
-  display: block;
-}
-
-.nav-list .dropdown:hover .dropdown-menu {
   display: block;
 }
 
@@ -230,10 +239,7 @@ footer {
   padding: 2rem;
 }
 
-.single-grid {
-  grid-template-columns: 1fr;
-  justify-content: center;
-}
+/* Removed unused .single-grid */
 
 /* 10 – Card Box Style */
 .card {
@@ -286,6 +292,7 @@ footer {
   gap: 2rem;
   flex-wrap: wrap;
   padding: 2rem 0;
+  flex-direction: column; /* Mobile first: stack columns */
 }
 
 .left-column, .right-column {
@@ -350,7 +357,7 @@ footer {
   }
 
   .flex-container {
-    flex-direction: row;
+    flex-direction: row; /* side by side columns on tablet */
   }
 }
 
@@ -370,6 +377,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     gap: 2rem;
+    /* margin-left added above to avoid nav overlap */
   }
 }
 
@@ -379,4 +387,42 @@ footer {
   height: auto;
   aspect-ratio: 16/9;
   border-radius: 8px;
+}
+
+/* --- NEW: Navigation Toggle Button for Mobile --- */
+#nav-toggle {
+  display: none; /* hidden on desktop */
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #222;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  #nav-toggle {
+    display: block; /* show toggle button on mobile */
+  }
+
+  #main-nav {
+    display: none; /* hide nav by default on mobile */
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    padding: 1rem 0;
+    border-radius: 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  #main-nav.active {
+    display: block;
+  }
 }
