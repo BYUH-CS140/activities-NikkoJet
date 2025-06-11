@@ -1,81 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Personal Blog: Nikko Cayaba</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-  <!-- SIDE MENU -->
-  <nav id="main-nav" aria-label="Main navigation">
-    <ul class="nav-list">
-      <li><a href="book.html"><img src="images/book-icon.png" alt="" class="nav-icon"> Book</a></li>
-      <li><a href="place.html"><img src="images/place-icon.png" alt="" class="nav-icon"> Place</a></li>
-      <li><a href="food.html"><img src="images/food-icon.png" alt="" class="nav-icon"> Food</a></li>
-      <li class="dropdown">
-        <a href="#"><img src="images/user-icon.png" alt="" class="nav-icon"> About Me ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="index.html">Personal Bio</a></li>
-          <li><a href="book.html">Book Summary</a></li>
-          <li><a href="place.html">My Home Place</a></li>
-          <li><a href="food.html">Favorite Food</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+  <div class="layout-container">
+    <!-- SIDE MENU -->
+    <nav id="main-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="book.html"><img src="images/book-icon.png" alt="" class="nav-icon" /> Book</a></li>
+        <li><a href="place.html"><img src="images/place-icon.png" alt="" class="nav-icon" /> Place</a></li>
+        <li><a href="food.html"><img src="images/food-icon.png" alt="" class="nav-icon" /> Food</a></li>
+        <li class="dropdown">
+          <a href="#"><img src="images/user-icon.png" alt="" class="nav-icon" /> About Me ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Personal Bio</a></li>
+            <li><a href="book.html">Book Summary</a></li>
+            <li><a href="place.html">My Home Place</a></li>
+            <li><a href="food.html">Favorite Food</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
 
-  <!-- HEADER -->
-  <header id="page-header">
-    <h1 class="title">Welcome to Nikko's Personal Blog</h1>
-  </header>
+    <!-- MAIN AREA -->
+    <div class="main-area">
+      <header id="page-header">
+        <h1 class="title">Welcome to Nikko's Personal Blog</h1>
+      </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <section class="flex-container">
-      <div class="left-column">
-        <img src="images/profile.JPG" alt="Nikko" class="profile-pic">
-        <h2>Hello, I'm <strong>Nikko</strong>.</h2>
-        <p>I am a CS major at BYU–Hawaii, blending tech with creativity.</p>
-        <p>This blog shares my life story, my hometown, my favorite book and a recipe I love.</p>
-      </div>
-
-      <div class="right-column">
-        <div class="card-grid">
-          <div class="card">
-            <img src="images/porcupine.jpg" alt="Porcupine Book" class="card-image">
-            <h3>Book Summary</h3>
-            <ul><li>Learn how to embrace tough personalities with love.</li></ul>
-            <a href="book.html">Read more...</a>
+      <main>
+        <!-- BIO SECTION -->
+        <section class="flex-container">
+          <div class="left-column">
+            <img src="images/profile.JPG" alt="Nikko" class="profile-pic" />
+            <h2>Hello, I'm <strong>Nikko</strong>.</h2>
+            <p>I am a CS major at BYU–Hawaii, blending tech with creativity.</p>
+            <p>This blog shares my life story, my hometown, my favorite book and a recipe I love.</p>
           </div>
 
-          <div class="card">
-            <img src="images/tumauini.jpg" alt="Tumauini" class="card-image">
-            <h3>My Home Place</h3>
-            <ul><li>Peaceful, historic and full of tradition. Welcome to Tumauini.</li></ul>
-            <a href="place.html">Explore more...</a>
+          <div class="right-column">
+            <div class="card-grid">
+              <!-- Book Card -->
+              <div class="card">
+                <img src="images/porcupine.jpg" alt="Porcupine Book" class="card-image" />
+                <h3>Book Summary</h3>
+                <ul>
+                  <li>Learn how to embrace tough personalities with love.</li>
+                </ul>
+                <a href="book.html">Read more...</a>
+              </div>
+
+              <!-- Place Card -->
+              <div class="card">
+                <img src="images/tumauini.jpg" alt="Tumauini" class="card-image" />
+                <h3>My Home Place</h3>
+                <ul>
+                  <li>Peaceful, historic and full of tradition. Welcome to Tumauini.</li>
+                </ul>
+                <a href="place.html">Explore more...</a>
+              </div>
+
+              <!-- Food Card -->
+              <div class="card">
+                <img src="images/porksinigang.jpg" alt="Sinigang" class="card-image" />
+                <h3>Favorite Food</h3>
+                <ul>
+                  <li>Pork Sinigang: a warm, sour comfort dish from the Philippines.</li>
+                </ul>
+                <a href="food.html">Try the recipe...</a>
+              </div>
+            </div>
           </div>
+        </section>
 
-          <div class="card">
-            <img src="images/porksinigang.jpg" alt="Sinigang" class="card-image">
-            <h3>Favorite Food</h3>
-            <ul><li>Pork Sinigang: a warm, sour comfort dish from the Philippines.</li></ul>
-            <a href="food.html">Try the recipe...</a>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- FLOAT SECTION -->
+        <section class="float-text">
+          <img src="images/profile.JPG" alt="Nikko smiling" class="float-img" />
+          <p>I enjoy building ideas that mix logic and art—whether in tech or life.</p>
+          <p>BYU–Hawaii shaped my world perspective, and I'm here to share my story through this blog.</p>
+        </section>
+      </main>
 
-    <section class="float-text">
-      <img src="images/profile.JPG" alt="Nikko smiling" class="float-img">
-      <p>I enjoy building ideas that mix logic and art—whether in tech or life.</p>
-      <p>BYU–Hawaii shaped my world perspective, and I'm here to share my story through this blog.</p>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Nikko Cayaba. All rights reserved.</p>
-  </footer>
+      <footer>
+        <p>&copy; 2025 Nikko Cayaba. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
