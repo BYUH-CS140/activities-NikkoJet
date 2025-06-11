@@ -365,3 +365,34 @@ footer {
     position: relative;
   }
 }
+
+/* Make the nav list vertical */
+.nav-list {
+  display: flex;
+  flex-direction: column; /* this makes the buttons stack vertically */
+  gap: 1rem; /* optional spacing between items */
+  list-style: none;
+  padding: 1rem;
+}
+
+/* Optional: style each button */
+.nav-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Optional: style the buttons themselves */
+.nav-list li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list li a:hover {
+  background-color: #f0f0f0;
+}
+
