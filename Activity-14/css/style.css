@@ -1,60 +1,45 @@
-/* 1 – Global Setup */
+* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 2 – Base Page Styling */
+/* Body Grid Layout */
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 1.6;
-  background-color: #f2f2f2;
-  background-image: url('../images/bgp.jpg');
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-  background-attachment: fixed;
-  color: #333;
   display: flex;
   flex-direction: column;
-}
-
-/* 3 – Header Banner */
-#page-header {
-  background-image: url("pattern-bg.png");
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: url('../images/bgp.jpg') no-repeat center top fixed;
   background-size: cover;
-  color: #ffffff;
-  padding: 1rem;
-  text-align: center;
-  border-bottom: 2px solid #ddd;
 }
 
-.title {
-  margin: 0;
-  font-size: 2rem;
-  letter-spacing: 0.05em;
+/* Grid for Desktop */
+@media (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "footer footer";
+  }
+
+  nav { grid-area: nav; }
+  header { grid-area: header; }
+  main { grid-area: main; }
+  footer { grid-area: footer; }
 }
 
-#page-header h2 {
-  margin-top: 10px;
-  font-weight: normal;
-  font-size: 1.5em;
-  color: #eeeeee;
-}
-
-/* 4 – Floating Side Navigation with Dropdown */
+/* Nav Styling */
 #main-nav {
-  position: fixed;
-  top: 80px;
-  left: 50px;
   background-color: #222;
   padding: 1.5rem 1rem;
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   z-index: 999;
+  margin: 1rem;
 }
 
 .nav-list {
@@ -62,273 +47,108 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin: 0;
-  padding: 0;
 }
 
-.nav-list > li {
+.nav-list li {
   position: relative;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.nav-list > li:hover {
-  background-color: #444;
-  transform: scale(1.05);
 }
 
 .nav-list a {
-  text-decoration: none;
   color: #fff;
+  text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  transition: color 0.3s;
 }
 
-.nav-list a:focus {
-  outline: 2px dashed #fff;
-  background-color: #555;
-  border-radius: 8px;
-}
-
-.nav-list img,
 .nav-icon {
   width: 24px;
   height: 24px;
-  vertical-align: middle;
 }
 
-/* Dropdown Menu */
+/* Dropdown */
 .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #444;
+  background: #444;
   padding: 0.5rem 0;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  z-index: 100;
-  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.dropdown-menu li {
-  padding: 0.5rem 1rem;
-  white-space: nowrap;
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 .dropdown-menu li a {
   color: #fff;
+  padding: 0.5rem 1rem;
   display: block;
 }
 
-.nav-list .dropdown:hover .dropdown-menu {
-  display: block;
+/* Header */
+#page-header {
+  text-align: center;
+  padding: 2rem;
+  color: #111;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
-/* 5 – Main Content */
-main {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-/* 6 – Section Styling */
-section {
-  margin-bottom: 40px;
-}
-
-h2, h3 {
-  color: #5a3e2b;
-}
-
-ul, ol {
-  margin-left: 40px;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul li {
-  background: url('../images/mouse.png') no-repeat left center;
-  background-size: 16px 16px;
-  padding-left: 24px;
-  margin-bottom: 8px;
-}
-
-/* 7 – Resources Section */
-.resources {
-  background-color: #ffffff;
-  padding: 1rem;
-  border-radius: 6px;
-  width: 60%;
-  margin: 2rem auto;
-}
-
-.resources li {
+#page-header h1 {
+  font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
-/* 8 – Miscellaneous Elements */
-img.profile-pic {
-  display: block;
-  max-width: 250px;
-  height: auto;
-  margin: 20px auto;
-  border: 2px solid #ccc;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+#page-header h2 {
+  font-weight: normal;
+  color: #555;
 }
 
-mark {
-  background-color: #ffe0a3;
-  padding: 0 4px;
-}
-
-iframe {
-  display: block;
-  max-width: 100%;
-  margin: 0 auto;
-  border: none;
-  border-radius: 8px;
-}
-
-blockquote {
-  font-style: italic;
-  color: #444;
-  margin: 20px auto;
-  max-width: 700px;
-}
-
-cite {
-  display: block;
-  margin-top: 10px;
-  color: #7a563c;
-}
-
-footer {
-  background-color: #f8e4c9;
-  text-align: center;
-  padding: 30px 20px;
-  border-top: 2px solid #ddd;
-}
-
-/* 9 – Card Grid Layout */
-.card-grid {
+/* Gallery Section */
+.gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
   padding: 2rem;
 }
 
-.single-grid {
-  grid-template-columns: 1fr;
-  justify-content: center;
-}
-
-/* 10 – Card Box Style */
-.card {
-  background-color: #ffffffdd;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
-
-.card h3 {
-  color: #5a3e2b;
-  margin-bottom: 0.5rem;
-}
-
-.card a {
-  color: #5a3e2b;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.card a:hover {
-  text-decoration: underline;
-}
-
-.card-image {
+.gallery img {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.small-img {
-  max-width: 200px;
   height: auto;
-  display: block;
-  margin: 0 auto 1rem auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* 11 – Flexbox Two-Column Layout */
-.flex-container {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  padding: 2rem 0;
-}
-
-.left-column, .right-column {
-  flex: 1;
-  min-width: 300px;
-}
-
-/* 12 – Floated Image Section */
-.float-text {
-  background-color: #ffffffcc;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin: 2rem auto;
-  max-width: 900px;
-  overflow: auto;
-}
-
-.float-img {
-  float: left;
-  margin: 0 20px 15px 0;
-  width: 200px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* 13 – Responsive Navigation */
-@media (max-width: 600px) {
-  #main-nav {
-    position: static;
-    width: 100%;
-    border-radius: 0;
-    box-shadow: none;
-    margin-bottom: 20px;
+/* Gallery breakpoints */
+@media (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .nav-list {
-    flex-direction: column;
-    align-items: center;
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
 
-  .nav-list > li {
-    width: 100%;
-    text-align: center;
-  }
+/* Description Section */
+.description {
+  padding: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 2rem;
+  border-radius: 10px;
+}
 
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
+/* Footer */
+footer {
+  background: #f2f2f2;
+  text-align: center;
+  padding: 1rem;
+  border-top: 2px solid #ddd;
 }
