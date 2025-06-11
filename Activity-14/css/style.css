@@ -330,3 +330,38 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* Layout Container with Side Nav + Main Area */
+.layout-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+/* Left nav stays narrow */
+#main-nav {
+  width: 250px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+/* Main content fills the rest */
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive Fix for Small Screens */
+@media (max-width: 768px) {
+  .layout-container {
+    flex-direction: column;
+  }
+
+  #main-nav {
+    width: 100%;
+    min-height: auto;
+    position: relative;
+  }
+}
