@@ -1,45 +1,38 @@
-* Global Reset */
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body Grid Layout */
+/* Base Styles */
 body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.6;
+  background: url('../images/bgp.jpg') no-repeat center top fixed;
+  background-size: cover;
+  color: #333;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: url('../images/bgp.jpg') no-repeat center top fixed;
-  background-size: cover;
+  padding-left: 260px; /* Reserve space for floating nav */
 }
 
-/* Grid for Desktop */
-@media (min-width: 1024px) {
-  body {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    grid-template-areas:
-      "header header"
-      "nav main"
-      "footer footer";
-  }
-
-  nav { grid-area: nav; }
-  header { grid-area: header; }
-  main { grid-area: main; }
-  footer { grid-area: footer; }
-}
-
-/* Nav Styling */
+/* Floating Sidebar Nav - Always Fixed */
 #main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100%;
   background-color: #222;
-  padding: 1.5rem 1rem;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
   z-index: 999;
-  margin: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-list {
@@ -60,6 +53,15 @@ body {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, transform 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.nav-list a:hover {
+  background-color: #444;
+  transform: scale(1.05);
 }
 
 .nav-icon {
@@ -67,16 +69,17 @@ body {
   height: 24px;
 }
 
-/* Dropdown */
+/* Dropdown Styling */
 .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 100%;
   background: #444;
   padding: 0.5rem 0;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  min-width: 180px;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -89,12 +92,12 @@ body {
   display: block;
 }
 
-/* Header */
+/* Header Styling */
 #page-header {
   text-align: center;
   padding: 2rem;
-  color: #111;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 2px solid #ddd;
 }
 
 #page-header h1 {
@@ -107,12 +110,26 @@ body {
   color: #555;
 }
 
+/* Main Content Area */
+main {
+  padding: 2rem;
+  flex: 1;
+}
+
+/* Description Section */
+.description {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+}
+
 /* Gallery Section */
 .gallery {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 .gallery img {
@@ -135,20 +152,33 @@ body {
   }
 }
 
-/* Description Section */
-.description {
-  padding: 2rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  background-color: rgba(255, 255, 255, 0.8);
-  margin: 2rem;
-  border-radius: 10px;
-}
-
 /* Footer */
 footer {
-  background: #f2f2f2;
+  background-color: #f2f2f2;
   text-align: center;
   padding: 1rem;
   border-top: 2px solid #ddd;
+  font-size: 1rem;
+}
+
+/* Apply Grid Template Areas for Desktop Layout Swap (Activity 14 requirement) */
+@media (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "nav header"
+      "nav main"
+      "nav footer";
+    grid-template-columns: 240px 1fr;
+  }
+
+  #main-nav { grid-area: nav; position: static; height: auto; box-shadow: none; }
+  #page-header { grid-area: header; }
+  main { grid-area: main; }
+  footer { grid-area: footer; }
+
+  /* Remove padding-left when nav becomes grid-based */
+  body {
+    padding-left: 0;
+  }
 }
