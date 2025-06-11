@@ -45,7 +45,7 @@ body {
   color: #eeeeee;
 }
 
-/* 4 – Final Floating Side Navigation */
+/* 4 – Floating Side Navigation with Dropdown */
 #main-nav {
   position: fixed;
   top: 80px;
@@ -67,10 +67,10 @@ body {
 }
 
 .nav-list > li {
-  background-color: transparent;
+  position: relative;
+  padding: 0.5rem 1rem;
   border-radius: 10px;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  padding: 0.5rem 1rem;
 }
 
 .nav-list > li:hover {
@@ -100,6 +100,34 @@ body {
   width: 24px;
   height: 24px;
   vertical-align: middle;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  padding: 0.5rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  z-index: 100;
+  min-width: 180px;
+}
+
+.dropdown-menu li {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a {
+  color: #fff;
+  display: block;
+}
+
+.nav-list .dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 /* 5 – Main Content */
