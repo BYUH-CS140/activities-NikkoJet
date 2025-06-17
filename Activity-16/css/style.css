@@ -23,6 +23,16 @@ h1, h2 {
     margin: 20px 0;
     background-color: #ff0000;
     border: 1px solid #ccc;
+    position: relative;
+}
+
+#colorValue {
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 150px;
+    color: #ffffff;
 }
 
 .palette-history {
