@@ -1,4 +1,4 @@
-/*Base Styling*/
+/* Base Styling */
 body {
   font-family: Arial, sans-serif;
   padding: 1rem;
@@ -35,17 +35,18 @@ input {
   width: 100%;
 }
 
-/*Feedback Styling*/
-.feedback {
-  color: red;
-  font-size: 0.9rem;
-  display: none;
-}
-
+/* Hint Styling */
 .hint {
   font-size: 0.85rem;
   color: #666;
   margin-top: 0.25rem;
+}
+
+/* Feedback Styling */
+.feedback {
+  color: red;
+  font-size: 0.9rem;
+  display: none;
 }
 
 .valid-feedback {
@@ -54,11 +55,11 @@ input {
   display: none;
 }
 
-/*Responsive Desktop Styling*/
+/* Responsive Desktop Styling */
 @media (min-width: 768px) {
   .form-group {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start; /* Ensures hint aligns under input, not beside label */
   }
 
   label {
@@ -72,10 +73,12 @@ input {
     flex: 1;
   }
 
-  .feedback {
+  .hint {
     margin-left: 150px;
+    margin-top: 0.25rem;
   }
 
+  .feedback,
   .valid-feedback {
     margin-left: 150px;
   }
