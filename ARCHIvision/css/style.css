@@ -116,3 +116,12 @@
     }
   }
   
+  .tagline {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #111;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  
