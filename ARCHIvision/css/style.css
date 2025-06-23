@@ -1,248 +1,102 @@
+/* Reset and global settings */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: 'Helvetica Neue', sans-serif;
-    background-color: white;
-    color: #111;
-    display: flex;
-    flex-direction: row;
-    min-height: 100vh;
-  }
-  
-  /* Sidebar */
-  .sidebar {
-    width: 200px;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-right: 1px solid #ddd;
-  }
-  
-  .logo {
-    border: 1px solid black;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 30px;
-    position: relative;
-  }
-  
-  .logo::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    transform: rotate(45deg);
-    transform-origin: top left;
-  }
-  
-  .sidebar h1 {
-    font-size: 24px;
-    margin-bottom: 30px;
-  }
-  
-  .nav a {
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-    display: block;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-  }
-  
-  /* Main content */
-  .main {
-    flex-grow: 1;
-    padding: 60px 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-  }
-  
-  .content {
-    max-width: 700px;
-  }
-  
-  .footer {
-    font-size: 12px;
-    margin-top: 50px;
-    color: #555;
-  }
-  
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    body {
-      flex-direction: column;
-    }
-  
-    .sidebar {
-      width: 100%;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      border-right: none;
-      border-bottom: 1px solid #ddd;
-    }
-  
-    .logo {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 0;
-    }
-  
-    .sidebar h1 {
-      font-size: 18px;
-      margin: 0;
-    }
-  
-    .nav {
-      display: flex;
-      gap: 15px;
-    }
-  
-    .main {
-      padding: 20px;
-      text-align: left;
-    }
-  }
-  
-  .tagline {
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    color: #111;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-    body {
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-    }
-  
-    .sidebar {
-      width: 100%;
-      padding: 40px 20px;
-      align-items: center;
-      border-right: none;
-      border-bottom: 1px solid #ddd;
-    }
-  
-    .logo {
-      width: 100px;
-      height: 100px;
-      margin-bottom: 20px;
-    }
-  
-    .sidebar h1 {
-      font-size: 26px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-  
-    .nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-  
-    .nav a {
-      font-size: 16px;
-      margin-bottom: 0;
-    }
-  
-    .main {
-      padding: 30px 20px;
-      text-align: center;
-      justify-content: center;
-    }
-  
-    .content {
-      max-width: 100%;
-    }
-  
-    .tagline {
-      text-align: center;
-    }
-  }
-  /* Base hamburger style (hidden on desktop) */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  user-select: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Ensure nav hides initially on tablet/mobile */
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: white;
+  color: #111;
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-right: 1px solid #ddd;
+}
+
+.logo {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.logo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+
+.sidebar h1 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
 .nav {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-/* Tablet hover dropdown behavior */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .hamburger {
-    display: block;
-    margin-top: 10px;
-  }
-
-  .nav {
-    display: none;
-    align-items: center;
-    margin-top: 10px;
-  }
-
-  .sidebar:hover .nav,
-  .hamburger:hover + .nav {
-    display: flex;
-  }
-
-  .sidebar {
-    align-items: center;
-    text-align: center;
-  }
-
-  .logo {
-    margin-bottom: 20px;
-  }
-
-  .sidebar h1 {
-    font-size: 26px;
-    margin-bottom: 10px;
-  }
-
-  .nav a {
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-    transition: color 0.3s ease;
-  }
-
-  .nav a:hover {
-    color: #777;
-  }
-
-  .main {
-    padding: 30px 20px;
-    text-align: center;
-    justify-content: center;
-  }
+.nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  display: block;
+  letter-spacing: 1px;
 }
 
+.nav a:hover {
+  color: #777;
+}
+
+/* Main content */
+.main {
+  flex-grow: 1;
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.content {
+  max-width: 700px;
+}
+
+.footer {
+  font-size: 12px;
+  margin-top: 50px;
+  color: #555;
+}
+
+.tagline {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #111;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Projects Section Styling */
 .projects-section {
   padding: 2rem;
   max-width: 1200px;
@@ -284,4 +138,130 @@
   margin: 0;
   font-size: 0.9rem;
   color: #555;
+}
+
+/* Hamburger for responsive nav */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0;
+  }
+
+  .sidebar h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .main {
+    padding: 20px;
+    text-align: left;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet layout (portrait) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 40px 20px;
+    align-items: center;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  .sidebar h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav a {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  .hamburger {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .nav {
+    display: none;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .sidebar:hover .nav,
+  .hamburger:hover + .nav {
+    display: flex;
+  }
+
+  .main {
+    padding: 30px 20px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .tagline {
+    text-align: center;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
