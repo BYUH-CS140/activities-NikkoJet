@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PEOPLE | ARCHIVision</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="responsive-page people-page">
 
@@ -15,21 +15,23 @@
       </div>
       <h1>ARCHIVision</h1>
     </div>
-    <div class="hamburger" aria-label="Toggle navigation">&#9776;</div>
-    <div class="nav" aria-label="Main navigation">
+    <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="home.html">HOME</a>
       <a href="index.html">ABOUT</a>
       <a href="project.html">PROJECTS</a>
-      <a href="people.html" class="active">PEOPLE</a>
+      <a href="people.html">PEOPLE</a>
       <a href="contacts.html">CONTACT</a>
-    </div>
+    </nav>
   </div>
 
   <div class="main">
     <section class="people-section">
+      <h2>Featured Architects</h2>
 
       <div class="person-card">
         <a href="https://en.wikipedia.org/wiki/Frank_Lloyd_Wright" target="_blank">
-          <img src="images/franklloyd.jpeg" alt="Frank Lloyd Wright" />
+          <img src="images/franklloyd.jpeg" alt="Frank Lloyd Wright">
         </a>
         <div class="person-name">Frank Lloyd Wright</div>
         <div class="person-known">Known for: Organic Architecture, Fallingwater</div>
@@ -37,7 +39,7 @@
 
       <div class="person-card">
         <a href="https://en.wikipedia.org/wiki/Zaha_Hadid" target="_blank">
-          <img src="images/zahahadid.webp" alt="Zaha Hadid" />
+          <img src="images/zahahadid.webp" alt="Zaha Hadid">
         </a>
         <div class="person-name">Zaha Hadid</div>
         <div class="person-known">Known for: Futuristic Designs, Heydar Aliyev Center</div>
@@ -45,7 +47,7 @@
 
       <div class="person-card">
         <a href="https://en.wikipedia.org/wiki/Le_Corbusier" target="_blank">
-          <img src="images/lecorb.jpg" alt="Le Corbusier" />
+          <img src="images/lecorb.jpg" alt="Le Corbusier">
         </a>
         <div class="person-name">Le Corbusier</div>
         <div class="person-known">Known for: Modernism, Villa Savoye</div>
@@ -53,7 +55,7 @@
 
       <div class="person-card">
         <a href="https://en.wikipedia.org/wiki/Ludwig_Mies_van_der_Rohe" target="_blank">
-          <img src="images/ludwig.jpg" alt="Mies van der Rohe" />
+          <img src="images/ludwig.jpg" alt="Mies van der Rohe">
         </a>
         <div class="person-name">Ludwig Mies van der Rohe</div>
         <div class="person-known">Known for: Minimalism, Barcelona Pavilion</div>
@@ -61,7 +63,7 @@
 
       <div class="person-card">
         <a href="https://en.wikipedia.org/wiki/Norman_Foster,_Baron_Foster_of_Thames_Bank" target="_blank">
-          <img src="images/norman.jpg" alt="Norman Foster" />
+          <img src="images/norman.jpg" alt="Norman Foster">
         </a>
         <div class="person-name">Norman Foster</div>
         <div class="person-known">Known for: High-Tech Architecture, The Gherkin</div>
@@ -69,7 +71,7 @@
 
       <div class="person-card">
         <a href="https://en.wikipedia.org/wiki/Tadao_Ando" target="_blank">
-          <img src="images/tadao.jpg" alt="Tadao Ando" />
+          <img src="images/tadao.jpg" alt="Tadao Ando">
         </a>
         <div class="person-name">Tadao Ando</div>
         <div class="person-known">Known for: Concrete Simplicity, Church of the Light</div>
@@ -77,7 +79,7 @@
 
       <div class="person-card">
         <a href="https://en.wikipedia.org/wiki/Rem_Koolhaas" target="_blank">
-          <img src="images/rem.jpg" alt="Rem Koolhaas" />
+          <img src="images/rem.jpg" alt="Rem Koolhaas">
         </a>
         <div class="person-name">Rem Koolhaas</div>
         <div class="person-known">Known for: Deconstructivism, CCTV Headquarters</div>
@@ -85,7 +87,7 @@
 
       <div class="person-card">
         <a href="https://en.wikipedia.org/wiki/Bjarke_Ingels" target="_blank">
-          <img src="images/bjark.jpg" alt="Bjarke Ingels" />
+          <img src="images/bjark.jpg" alt="Bjarke Ingels">
         </a>
         <div class="person-name">Bjarke Ingels</div>
         <div class="person-known">Known for: Sustainable Innovation, VIA 57 West</div>
@@ -93,7 +95,7 @@
 
       <div class="person-card">
         <a href="https://en.wikipedia.org/wiki/Renzo_Piano" target="_blank">
-          <img src="images/renzo.jpg" alt="Renzo Piano" />
+          <img src="images/renzo.jpg" alt="Renzo Piano">
         </a>
         <div class="person-name">Renzo Piano</div>
         <div class="person-known">Known for: The Shard, Centre Pompidou</div>
@@ -101,17 +103,17 @@
 
       <div class="person-card">
         <a href="https://en.wikipedia.org/wiki/I._M._Pei" target="_blank">
-          <img src="images/pei.webp" alt="I.M. Pei" />
+          <img src="images/pei.webp" alt="I.M. Pei">
         </a>
         <div class="person-name">I.M. Pei</div>
         <div class="person-known">Known for: Glass Pyramid at the Louvre</div>
       </div>
-
     </section>
 
     <div class="footer">© 2025 ARCHIVision. All rights reserved.</div>
   </div>
 
+  <!-- Scripts -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const hamburger = document.querySelector(".hamburger");
@@ -122,15 +124,27 @@
           nav.classList.toggle("active");
         });
       }
-    });
 
-    window.addEventListener('scroll', () => {
-      const sidebar = document.querySelector('.sidebar');
-      if (window.scrollY > 10) {
-        sidebar.classList.add('shrink');
-      } else {
-        sidebar.classList.remove('shrink');
-      }
+      // Shrink on scroll
+      window.addEventListener('scroll', () => {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.classList.toggle('shrink', window.scrollY > 10);
+      });
+
+      // Page fade
+      document.body.classList.add('loaded');
+      document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('tel')) {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.body.classList.remove('loaded');
+            setTimeout(() => {
+              window.location.href = href;
+            }, 300);
+          });
+        }
+      });
     });
   </script>
 

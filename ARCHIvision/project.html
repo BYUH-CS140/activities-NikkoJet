@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PROJECTS | ARCHIVision</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="responsive-page">
+<body class="responsive-page projects-page">
 
-  <!-- Sidebar with navigation -->
+  <!-- Sidebar -->
   <div class="sidebar">
     <div class="brand">
       <div class="logo">
@@ -16,61 +16,61 @@
       </div>
       <h1>ARCHIVision</h1>
     </div>
-    <div class="hamburger" aria-label="Toggle navigation">&#9776;</div>
-    <div class="nav" aria-label="Main navigation">
+    <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="home.html">HOME</a>
       <a href="index.html">ABOUT</a>
-      <a href="project.html" class="active">PROJECTS</a>
+      <a href="project.html">PROJECTS</a>
       <a href="people.html">PEOPLE</a>
       <a href="contacts.html">CONTACT</a>
-    </div>
+    </nav>
   </div>
 
-  <!-- Main content with project tiles -->
+  <!-- Main Content -->
   <div class="main">
     <section class="projects-section">
       <div class="project-grid">
-
         <a href="https://www.modernhousearchitects.com/work" class="project-tile" target="_blank">
-          <img src="images/modern house.jpg" alt="Modern House">
+          <img src="images/modern-house.jpg" alt="Modern House">
           <h3>MODERN HOUSE</h3>
           <p>MIXED-USE</p>
         </a>
 
         <a href="https://divisare.com/mediterranean-houses" class="project-tile" target="_blank">
-          <img src="images/mediterranean house.jpg" alt="Mediterranean House">
+          <img src="images/mediterranean-house.jpg" alt="Mediterranean House">
           <h3>MEDITERRANEAN HOUSE</h3>
           <p>HEALTHCARE</p>
         </a>
 
         <a href="https://www.architecturaldigest.com/story/bungalow-everything-you-need-to-know" class="project-tile" target="_blank">
-          <img src="images/bungalow house.jpeg" alt="Bungalow House">
+          <img src="images/bungalow-house.jpeg" alt="Bungalow House">
           <h3>BUNGALOW HOUSE</h3>
           <p>RESIDENTIAL</p>
         </a>
 
         <a href="https://www.architecturaldigest.com/story/craftsman-house-everything-you-need-to-know" class="project-tile" target="_blank">
-          <img src="images/craftsman house.jpg" alt="Craftsman House">
+          <img src="images/craftsman-house.jpg" alt="Craftsman House">
           <h3>CRAFTSMAN HOUSE</h3>
           <p>RESIDENTIAL</p>
         </a>
 
         <a href="https://classiccolonialhomes.com" class="project-tile" target="_blank">
-          <img src="images/colonial house.jpg" alt="Colonial House">
+          <img src="images/colonial-house.jpg" alt="Colonial House">
           <h3>COLONIAL HOUSE</h3>
           <p>PUBLIC SPACE</p>
         </a>
 
         <a href="https://www.houseplans.net/modernfarmhouse-house-plans" class="project-tile" target="_blank">
-          <img src="images/farm house.jpg" alt="Farm House">
+          <img src="images/farm-house.jpg" alt="Farm House">
           <h3>FARM HOUSE</h3>
           <p>RESIDENTIAL</p>
         </a>
-
       </div>
     </section>
     <div class="footer">© 2025 ARCHIVision. All rights reserved.</div>
   </div>
 
+  <!-- Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const hamburger = document.querySelector(".hamburger");
@@ -81,15 +81,28 @@
           nav.classList.toggle("active");
         });
       }
-    });
 
-    window.addEventListener('scroll', () => {
-      const sidebar = document.querySelector('.sidebar');
-      if (window.scrollY > 10) {
-        sidebar.classList.add('shrink');
-      } else {
-        sidebar.classList.remove('shrink');
-      }
+      window.addEventListener('scroll', () => {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.classList.toggle('shrink', window.scrollY > 10);
+      });
+
+      // Fade-in effect on load
+      document.body.classList.add('loaded');
+
+      // Fade-out before page change
+      document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('tel')) {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.body.classList.remove('loaded');
+            setTimeout(() => {
+              window.location.href = href;
+            }, 300);
+          });
+        }
+      });
     });
   </script>
 

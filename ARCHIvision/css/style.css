@@ -72,7 +72,7 @@ body {
   }
 
   .logo img {
-    content: url('../images/archivision-dark.png');
+    content: url('../images/archivisionwhite.png');
   }
 
   .tagline {
@@ -163,6 +163,16 @@ body {
   position: relative;
   box-sizing: border-box;
 }
+
+body.index-page .main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 
 .content {
   max-width: 700px;
@@ -484,14 +494,1217 @@ body {
   }
 }
 
-/* Shrink effect on scroll for mobile */
-@media (max-width: 768px) {
-  window.addEventListener('scroll', () => {
-    const sidebar = document.querySelector('.sidebar');
-    if (window.scrollY > 50) {
-      sidebar.classList.add('shrink');
-    } else {
-      sidebar.classList.remove('shrink');
-    }
-  });
+/* Hero Slideshow (index.html only) */
+/* Refined Hero Slideshow for ARCHIVision */
+.hero-slider {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0%;
+  flex-shrink: 0;
 }
+
+.hero-slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Optional: Adjust for mobile view */
+@media (max-width: 768px) {
+  .hero-slider,
+  .hero-slide {
+    height: 60vh;
+  }
+}
+
+/* Reset and global settings */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: white;
+  color: #111;
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hero Slider */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Reset and global settings */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: white;
+  color: #111;
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hero Slider */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Lato', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  padding: 0 20px;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111;
+    color: #eee;
+  }
+  .hero-caption {
+    color: #fff;
+  }
+}
+@media (max-width: 768px) {
+  .hero-caption {
+    font-size: 2rem;
+  }
+}
+
+
+/* Responsive Slider */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 50vh;
+  }
+  .hero-caption {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    position: relative;
+    z-index: 10;
+    background-color: white;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .sidebar h1 {
+    font-size: 20px;
+    margin: 5px 0;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 26px;
+    margin-top: 10px;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    padding-bottom: 10px;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .main {
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar,
+  .nav {
+    background-color: inherit;
+    color: inherit;
+  }
+
+  .nav a {
+    color: inherit;
+  }
+
+  .contact-info,
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea,
+  .project-tile h3,
+  .project-tile p,
+  .person-known {
+    color: inherit;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111;
+    color: #eee;
+  }
+
+  .sidebar,
+  .nav {
+    background-color: #111;
+  }
+
+  .nav a,
+  .nav a.active,
+  .footer,
+  .project-tile p,
+  .project-tile h3,
+  .person-known,
+  .person-name,
+  .contact-info,
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea {
+    color: #eee;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    border-bottom: 1px solid #888;
+  }
+
+  .contact-form button {
+    border-color: #eee;
+    color: #eee;
+  }
+
+  .contact-form button:hover {
+    background-color: #eee;
+    color: #111;
+  }
+
+  .hero-caption {
+    color: #fff;
+  }
+
+  .project-tile,
+  .person-card {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .project-tile,
+  .person-card {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info,
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea,
+  .project-tile h3,
+  .project-tile p,
+  .person-known {
+    color: inherit;
+  }
+}
+
+/* === HOME PAGE STYLES === */
+.home-page {
+  flex-direction: column;
+  background: #fef8f3;
+  color: #111;
+  font-family: 'Lato', sans-serif;
+}
+
+.hero {
+  background: linear-gradient(to right, #ffd9e3, #fff5c3);
+  text-align: center;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #111;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  max-width: 600px;
+}
+
+.cta-button {
+  background-color: #ff7ea5;
+  color: white;
+  padding: 14px 28px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ff5e91;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.feature-tile {
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-tile img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  height: 200px;
+}
+
+.feature-tile h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.feature-tile p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.feature-tile:hover {
+  transform: translateY(-5px);
+}
+
+.intro-scroll {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f6f6f6;
+}
+
+.intro-scroll h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.intro-scroll p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.cta-outline {
+  border: 2px solid #ff7ea5;
+  color: #ff7ea5;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.cta-outline:hover {
+  background-color: #ff7ea5;
+  color: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-tile {
+    max-width: 90%;
+  }
+
+  .intro-scroll h2 {
+    font-size: 1.5rem;
+  }
+}
+ 
+
+/* Homepage Specific Styles */
+.home-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-hero-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  z-index: 0;
+}
+
+.home-hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.home-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+.home-header.shrink {
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  .home-header {
+    background-color: rgba(17, 17, 17, 0.9);
+  }
+
+  .home-header.shrink {
+    background-color: rgba(17, 17, 17, 0.8);
+  }
+
+  .home-nav a,
+  .site-title {
+    color: #fff;
+  }
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-branding img {
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.home-header.shrink .site-branding img {
+  transform: scale(0.85);
+}
+
+.site-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111;
+  transition: color 0.3s ease;
+}
+
+.home-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.home-nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #111;
+  transition: color 0.3s ease;
+}
+
+.home-nav a:hover {
+  color: #555;
+}
+
+.hamburger-home {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .home-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .site-branding {
+    justify-content: center;
+  }
+
+  .home-nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .home-nav.active {
+    display: flex;
+  }
+
+  .hamburger-home {
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+.home-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 2;
+  font-family: 'Lato', sans-serif;
+}
+
+.home-caption h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.home-caption p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.home-caption a {
+  background-color: #000;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.home-caption a:hover {
+  background-color: #333;
+}
+
+/* === Home Hero Slideshow === */
+.home-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-hero-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  z-index: 0;
+}
+
+.home-hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* === Header Overlay on Slideshow === */
+.home-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+
+.home-header.shrink {
+  padding: 0.6rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-branding img {
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.home-header.shrink .site-branding img {
+  transform: scale(0.85);
+}
+
+.site-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #111;
+}
+
+/* === Navigation Links === */
+.home-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.home-nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #111;
+  transition: color 0.3s ease;
+}
+
+.home-nav a:hover {
+  color: #666;
+}
+
+/* === Caption on Slideshow === */
+.home-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 3;
+  font-family: 'Lato', sans-serif;
+  padding: 0 1rem;
+}
+
+.home-caption h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.home-caption p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.home-caption a {
+  background-color: #000;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.home-caption a:hover {
+  background-color: #333;
+}
+
+/* === Hamburger Menu (Mobile) === */
+.hamburger-home {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #111;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  .home-header {
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  .site-branding {
+    justify-content: center;
+  }
+
+  .home-nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .home-nav.active {
+    display: flex;
+  }
+
+  .hamburger-home {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .home-caption h1 {
+    font-size: 2rem;
+  }
+
+  .home-caption p {
+    font-size: 1rem;
+  }
+}
+
+/* === Dark Mode Support === */
+@media (prefers-color-scheme: dark) {
+  .home-header.shrink {
+    background-color: transparent;
+  }
+  
+
+  .site-title,
+  .home-nav a,
+  .hamburger-home {
+    color: #fff;
+  }
+
+  .home-header.shrink {
+    background-color: rgba(17, 17, 17, 0.9);
+  }
+}
+
+/* Transparent Header on Homepage */
+.home-header,
+.home-header.shrink {
+  background-color: transparent !important;
+}
+
+/* Ensure transparency is preserved in dark mode */
+@media (prefers-color-scheme: dark) {
+  .home-header,
+  .home-header.shrink {
+    background-color: transparent !important;
+  }
+}
+
+/* Optional: Add text shadow to improve contrast over background image */
+.home-nav a,
+.site-title {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* HOME PAGE HEADER & NAVIGATION INSIDE SLIDESHOW */
+.home-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-hero-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+.home-hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.home-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.home-header.shrink {
+  padding: 0.75rem 1rem;
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-branding img {
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.home-header.shrink .site-branding img {
+  transform: scale(0.9);
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.home-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.home-nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.home-nav a:hover {
+  color: #ccc;
+}
+
+.hamburger-home {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* HERO CAPTION */
+.home-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+.home-caption h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.home-caption p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-caption a {
+  background: black;
+  color: white;
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.home-caption a:hover {
+  background: #444;
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+  .site-title,
+  .home-nav a,
+  .hamburger-home {
+    color: white;
+  }
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 768px) {
+  .home-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-nav {
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .home-nav.active {
+    display: flex;
+  }
+
+  .hamburger-home {
+    display: block;
+  }
+
+  .home-caption h1 {
+    font-size: 2rem;
+  }
+
+  .home-caption p {
+    font-size: 1rem;
+  }
+}
+
+/* === ENSURE HERO FULLY FILLS SCREEN === */
+.home-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* FULL screen height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Fix Hero Slide (ensure it fills parent correctly) === */
+.home-hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+.home-hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* === Make the caption fully responsive === */
+.home-caption {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
+}
+
+.home-caption h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.home-caption p {
+  font-size: 1.1rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* === Responsive Header (fix for mobile collapsing issues) === */
+.home-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  background: transparent; /* Transparent over hero */
+}
+
+/* Responsive nav toggle (mobile only) */
+@media (max-width: 768px) {
+  .home-header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .home-caption h1 {
+    font-size: 1.8rem;
+  }
+
+  .home-caption p {
+    font-size: 1rem;
+  }
+
+  .home-nav {
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .home-nav.active {
+    display: flex;
+  }
+
+  .hamburger-home {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    margin-top: 10px;
+  }
+}
+/* === WHY ARCHIVISION SECTION === */
+.why-archivision {
+  padding: 4rem 2rem;
+  background-color: var(--bg-color, #f8f8f8);
+  text-align: center;
+  color: var(--text-color, #222);
+}
+
+.why-archivision h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.value-card {
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: scale(1.02);
+}
+
+.value-content {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.value-content h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+}
+
+.value-content p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* === RESPONSIVE LAYOUT === */
+@media (min-width: 600px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .values-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* === DARK MODE SUPPORT === */
+:root {
+  --bg-color: #f8f8f8;
+  --text-color: #222;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #1a1a1a;
+    --text-color: #f1f1f1;
+  }
+
+  .value-content {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Page Transition Effect */
+body {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+/* Smooth Page Transition */
+body {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+body.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Universal Hamburger Button Styling */
+.hamburger,
+.hamburger-home {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: inherit; /* ensures it adapts to light/dark mode */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Optional: Remove focus outline, but keep accessibility in mind */
+.hamburger:focus,
+.hamburger-home:focus {
+  outline: none;
+}
+
+/* Optional: Add a hover effect for better UX */
+.hamburger:hover,
+.hamburger-home:hover {
+  opacity: 0.7;
+}
+

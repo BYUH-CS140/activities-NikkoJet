@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME | ARCHIVision</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page">
+
+  <div class="home-hero">
+    <!-- Slideshow Background Images -->
+    <div class="home-hero-slide active" style="background-image: url('images/home1.jpg');"></div>
+    <div class="home-hero-slide" style="background-image: url('images/home2.jpg');"></div>
+    <div class="home-hero-slide" style="background-image: url('images/home3.jpg');"></div>
+
+    <!-- Hero Content Overlay -->
+    <div class="home-hero-overlay">
+      <header class="home-header" id="mainHeader">
+        <div class="site-branding">
+          <img src="images/archivisionwhite.png" alt="ARCHIVision Logo">
+          <span class="site-title">ARCHIVision</span>
+        </div>
+        <button class="hamburger-home" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+        <nav class="home-nav" id="homeNav">
+          <a href="index.html">ABOUT</a>
+          <a href="project.html">PROJECTS</a>
+          <a href="people.html">PEOPLE</a>
+          <a href="contacts.html">CONTACT</a>
+        </nav>
+      </header>
+
+      <div class="home-caption">
+        <h1>Turn Ideas Into Architecture</h1>
+        <p>ARCHIVision is where bold imagination meets design reality.</p>
+        <a href="project.html">Explore Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY ARCHIVISION SECTION -->
+  <section class="why-archivision">
+    <h2>Why ARCHIVision?</h2>
+    <div class="values-grid">
+      <div class="value-card" style="background-image: url('images/value1.jpg');">
+        <div class="value-content">
+          <h3>Timeless Design</h3>
+          <p>Our work embodies enduring aesthetics that transcend trends and stand the test of time.</p>
+        </div>
+      </div>
+      <div class="value-card" style="background-image: url('images/value2.jpg');">
+        <div class="value-content">
+          <h3>Harmony with Nature</h3>
+          <p>We design in sync with the environment, balancing innovation with sustainability.</p>
+        </div>
+      </div>
+      <div class="value-card" style="background-image: url('images/value3.jpg');">
+        <div class="value-content">
+          <h3>Craftsmanship in Detail</h3>
+          <p>Every detail is meticulously crafted to reflect artistry, function, and elegance.</p>
+        </div>
+      </div>
+      <div class="value-card" style="background-image: url('images/value4.jpg');">
+        <div class="value-content">
+          <h3>Connected Spaces</h3>
+          <p>We create spaces that foster connection—between people, nature, and ideas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">© 2025 ARCHIVision. All rights reserved.</footer>
+
+  <script>
+    // Hamburger toggle for mobile nav
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('homeNav').classList.toggle('active');
+    });
+
+    // Slideshow rotation
+    const slides = document.querySelectorAll('.home-hero-slide');
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000);
+
+    // Header shrink on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('mainHeader');
+      header.classList.toggle('shrink', window.scrollY > 30);
+    });
+
+    // Fade transition on page load and navigation
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loaded');
+    });
+
+    document.querySelectorAll('a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('tel')) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.body.classList.remove('loaded');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

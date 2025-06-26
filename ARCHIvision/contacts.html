@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CONTACT | ARCHIVision</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="responsive-page">
+
   <div class="sidebar">
     <div class="brand">
       <div class="logo">
@@ -14,16 +15,21 @@
       </div>
       <h1>ARCHIVision</h1>
     </div>
-    <div class="hamburger" aria-label="Toggle navigation">&#9776;</div>
-    <div class="nav" aria-label="Main navigation">
+    <button class="hamburger" aria-label="Toggle navigation">
+      &#9776;
+    </button>    
+    <nav class="nav" id="sidebarNav" aria-label="Main navigation">
+      <a href="home.html">HOME</a>
       <a href="index.html">ABOUT</a>
       <a href="project.html">PROJECTS</a>
       <a href="people.html">PEOPLE</a>
-      <a href="contacts.html" class="active">CONTACT</a>
-    </div>
+      <a href="contacts.html">CONTACT</a>
+    </nav>
   </div>
+
   <div class="main contact-main">
     <section class="contact-section">
+      <h2>Contact Us</h2> <!-- Added heading -->
       <div class="contact-info">
         <p>Email us for new projects, collaboration and architectural query</p>
         <p><strong>ARCHIVision</strong><br>Laie, HI.<br>Brigham Young University-Hawaii<br>studio@archivision.com</p>
@@ -45,18 +51,36 @@
     <footer class="footer">© 2025 ARCHIVision. All rights reserved.</footer>
   </div>
   <script>
+    // Hamburger toggle
     document.querySelector('.hamburger')?.addEventListener('click', () => {
-      document.querySelector('.nav')?.classList.toggle('active');
+      document.querySelector('#sidebarNav')?.classList.toggle('active');
     });
 
+    // Shrink on scroll
     window.addEventListener('scroll', () => {
       const sidebar = document.querySelector('.sidebar');
-      if (window.scrollY > 10) {
-        sidebar.classList.add('shrink');
-      } else {
-        sidebar.classList.remove('shrink');
+      sidebar.classList.toggle('shrink', window.scrollY > 10);
+    });
+
+    // Page transition fade-in
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loaded');
+    });
+
+    // Fade-out transition before navigating
+    document.querySelectorAll('a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('tel')) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.body.classList.remove('loaded');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300);
+        });
       }
     });
   </script>
+
 </body>
 </html>

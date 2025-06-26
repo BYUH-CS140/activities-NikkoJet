@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ABOUT | ARCHIVision</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="responsive-page">
+<body class="responsive-page index-page">
+
+  <!-- Sidebar -->
   <div class="sidebar">
     <div class="brand">
       <div class="logo">
@@ -14,36 +17,77 @@
       </div>
       <h1>ARCHIVision</h1>
     </div>
-    <div class="hamburger" aria-label="Toggle navigation">&#9776;</div>
-    <div class="nav" aria-label="Main navigation">
-      <a href="index.html" class="active">ABOUT</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="home.html">HOME</a>
+      <a href="index.html">ABOUT</a>
       <a href="project.html">PROJECTS</a>
       <a href="people.html">PEOPLE</a>
       <a href="contacts.html">CONTACT</a>
-    </div>
+    </nav>
   </div>
+
+  <!-- Main Content -->
   <div class="main">
-    <div class="content">
-      <p class="tagline">Turn your VISION into REALITY.</p>
-      <p><strong>ARCHIVision</strong> is a digital platform where architects showcase their portfolios, making it easier for people to find the perfect architect for their dream home or space. We believe great design begins with the right connection.</p><br>
-      <p>Our platform brings together diverse architectural styles, philosophies, and talent from around the world. Whether you're seeking bold modernisms, sustainable solutions, or timeless classics - ARCHIVision turns your ideas into reality through the right creative and trusted partnership.</p><br>
-      <p>By combining innovative design with practical tools, <strong>ARCHIVision</strong> helps architects share their work and helps clients discover their future architect with ease.</p>
-      <div class="footer">© 2025 ARCHIVision. All rights reserved.</div>
+    <!-- Slideshow -->
+    <div class="hero-slider">
+      <img src="images/picture1.jpg" class="hero-slide active" alt="Slide 1">
+      <img src="images/picture2.jpeg" class="hero-slide" alt="Slide 2">
+      <img src="images/picture3.jpeg" class="hero-slide" alt="Slide 3">
+      <img src="images/picture4.jpg" class="hero-slide" alt="Slide 4">
+      <div class="hero-caption">TURN YOUR VISION INTO REALITY.</div>
     </div>
+
+    <!-- About Content -->
+    <div class="content">
+      <p><strong>ARCHIVision</strong> is a digital platform where architects showcase their portfolios, making it easier for people to find the perfect architect for their dream home or space. We believe great design begins with the right connection.</p><br>
+      <p>Our platform brings together diverse architectural styles, philosophies, and talent from around the world. Whether you're seeking bold modernisms, sustainable solutions, or timeless classics — ARCHIVision turns your ideas into reality through the right creative and trusted partnership.</p><br>
+      <p>By combining innovative design with practical tools, <strong>ARCHIVision</strong> helps architects share their work and helps clients discover their future architect with ease.</p>
+    </div>
+
+    <div class="footer">© 2025 ARCHIVision. All rights reserved.</div>
   </div>
+
+  <!-- Scripts -->
   <script>
-    document.querySelector('.hamburger')?.addEventListener('click', () => {
+    // Hamburger Toggle
+    document.getElementById('hamburger')?.addEventListener('click', () => {
       document.querySelector('.nav')?.classList.toggle('active');
     });
 
+    // Shrink Sidebar on Scroll
     window.addEventListener('scroll', () => {
       const sidebar = document.querySelector('.sidebar');
-      if (window.scrollY > 10) {
-        sidebar.classList.add('shrink');
-      } else {
-        sidebar.classList.remove('shrink');
+      sidebar.classList.toggle('shrink', window.scrollY > 10);
+    });
+
+    // Slideshow Logic
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentIndex = 0;
+    setInterval(() => {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add('active');
+    }, 4000);
+
+    // Fade Transitions
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loaded');
+    });
+
+    document.querySelectorAll('a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('tel')) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.body.classList.remove('loaded');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300);
+        });
       }
     });
   </script>
+
 </body>
 </html>
