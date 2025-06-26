@@ -2006,4 +2006,65 @@ canvas#tetrisCanvas {
   height: 400px;
 }
 
+.error-messages p {
+  color: red;
+  font-size: 0.9em;
+  margin: 5px 0;
+}
 
+.mission, .goals {
+  margin-top: 2rem;
+}
+
+.mission h2,
+.goals h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.goals ul {
+  list-style: none;
+  padding: 0;
+}
+
+.goals ul li {
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+}
+/* Mission and Goals Grid */
+.mission,
+.goals {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.mission h2,
+.goals h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.goals ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.goals li {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.goals li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}

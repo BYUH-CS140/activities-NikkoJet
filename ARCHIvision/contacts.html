@@ -15,9 +15,7 @@
       </div>
       <h1>ARCHIVision</h1>
     </div>
-    <button class="hamburger" aria-label="Toggle navigation">
-      &#9776;
-    </button>    
+    <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>    
     <nav class="nav" id="sidebarNav" aria-label="Main navigation">
       <a href="home.html">HOME</a>
       <a href="index.html">ABOUT</a>
@@ -29,7 +27,7 @@
 
   <div class="main contact-main">
     <section class="contact-section">
-      <h2>Contact Us</h2> <!-- Added heading -->
+      <h2>Contact Us</h2>
       <div class="contact-info">
         <p>Email us for new projects, collaboration and architectural query</p>
         <p><strong>ARCHIVision</strong><br>Laie, HI.<br>Brigham Young University-Hawaii<br>studio@archivision.com</p>
@@ -38,36 +36,51 @@
           <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
         </div>
       </div>
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent!');">
+
+      <!-- Contact Form with Validation -->
+      <form class="contact-form" id="feedbackForm" action="scripts/save_form.php" method="POST" onsubmit="return validateForm();" novalidate>
+        <div id="formErrors" class="error-messages"></div>
+
         <label for="name">Your name</label>
         <input type="text" id="name" name="name" required>
+
         <label for="email">Your email</label>
         <input type="email" id="email" name="email" required>
+
         <label for="message">Your message</label>
         <textarea id="message" name="message" rows="4" required></textarea>
+
         <button type="submit">SEND</button>
       </form>
+
+      <!-- Thank You Message -->
+      <div id="thankYouMessage" style="display: none; color: green; margin-top: 10px;">
+        Thank you! Your message has been submitted.
+      </div>
     </section>
+
     <footer class="footer">© 2025 ARCHIVision. All rights reserved.</footer>
   </div>
+
+  <!-- Navigation Script -->
   <script>
-    // Hamburger toggle
     document.querySelector('.hamburger')?.addEventListener('click', () => {
       document.querySelector('#sidebarNav')?.classList.toggle('active');
     });
 
-    // Shrink on scroll
     window.addEventListener('scroll', () => {
       const sidebar = document.querySelector('.sidebar');
       sidebar.classList.toggle('shrink', window.scrollY > 10);
     });
 
-    // Page transition fade-in
     window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('loaded');
+
+      if (window.location.search.includes("success=true")) {
+        document.getElementById("thankYouMessage").style.display = "block";
+      }
     });
 
-    // Fade-out transition before navigating
     document.querySelectorAll('a').forEach(link => {
       const href = link.getAttribute('href');
       if (href && !href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('tel')) {
@@ -82,5 +95,7 @@
     });
   </script>
 
+  <!-- Form Validation Script -->
+  <script src="scripts/form-validation.js"></script>
 </body>
 </html>
