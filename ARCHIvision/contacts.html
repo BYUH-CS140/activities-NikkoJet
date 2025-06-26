@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact</title>
+  <title>CONTACT | ARCHIVision</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="responsive-page">
   <div class="sidebar">
-    <div class="logo"></div>
-    <h1>ARCHIVision</h1>
-    <div class="hamburger">&#9776;</div>
-    <div class="nav">
+    <div class="brand">
+      <div class="logo">
+        <img src="images/archivision.png" alt="ARCHIVision Logo">
+      </div>
+      <h1>ARCHIVision</h1>
+    </div>
+    <div class="hamburger" aria-label="Toggle navigation">&#9776;</div>
+    <div class="nav" aria-label="Main navigation">
       <a href="index.html">ABOUT</a>
       <a href="project.html">PROJECTS</a>
       <a href="people.html">PEOPLE</a>
@@ -24,11 +28,11 @@
         <p>Email us for new projects, collaboration and architectural query</p>
         <p><strong>ARCHIVision</strong><br>Laie, HI.<br>Brigham Young University-Hawaii<br>studio@archivision.com</p>
         <div class="social-icons">
-          <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
-          <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
+          <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
         </div>
       </div>
-      <form class="contact-form">
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent!');">
         <label for="name">Your name</label>
         <input type="text" id="name" name="name" required>
         <label for="email">Your email</label>
@@ -38,11 +42,20 @@
         <button type="submit">SEND</button>
       </form>
     </section>
-    <footer class="footer">© ARCHIVision. All rights reserved.</footer>
+    <footer class="footer">© 2025 ARCHIVision. All rights reserved.</footer>
   </div>
   <script>
     document.querySelector('.hamburger')?.addEventListener('click', () => {
       document.querySelector('.nav')?.classList.toggle('active');
+    });
+
+    window.addEventListener('scroll', () => {
+      const sidebar = document.querySelector('.sidebar');
+      if (window.scrollY > 10) {
+        sidebar.classList.add('shrink');
+      } else {
+        sidebar.classList.remove('shrink');
+      }
     });
   </script>
 </body>

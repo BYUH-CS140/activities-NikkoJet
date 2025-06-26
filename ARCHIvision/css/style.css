@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+:root {
+  color-scheme: light dark;
+}
+
 body {
   font-family: 'Helvetica Neue', sans-serif;
   background-color: white;
@@ -12,6 +16,68 @@ body {
   display: flex;
   flex-direction: row;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111;
+    color: #eee;
+  }
+
+  .sidebar {
+    border-color: #333;
+  }
+
+  .nav a {
+    color: #eee;
+  }
+
+  .nav a:hover {
+    color: #aaa;
+  }
+
+  .nav a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  .footer {
+    color: #aaa;
+  }
+
+  .project-tile p,
+  .person-known {
+    color: #ccc;
+  }
+
+  .person-name {
+    color: #fff;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    border-bottom: 1px solid #aaa;
+    color: #eee;
+  }
+
+  .contact-form button {
+    border-color: #eee;
+    color: #eee;
+  }
+
+  .contact-form button:hover {
+    background-color: #eee;
+    color: #111;
+  }
+
+  .logo img {
+    content: url('../images/archivision-dark.png');
+  }
+
+  .tagline {
+    color: #eee;
+  }
 }
 
 /* Sidebar */
@@ -22,38 +88,45 @@ body {
   flex-direction: column;
   align-items: flex-start;
   border-right: 1px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .logo {
-  border: 1px solid black;
-  width: 100px;
-  height: 100px;
-  margin-bottom: 30px;
-  position: relative;
+  width: 120px;
+  transition: transform 0.3s ease;
 }
 
-.logo::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+.logo img {
   width: 100%;
-  height: 100%;
-  border-top: 1px solid black;
-  border-left: 1px solid black;
-  transform: rotate(45deg);
-  transform-origin: top left;
+  height: auto;
+  display: block;
+}
+
+.sidebar.shrink .logo {
+  transform: scale(0.8);
 }
 
 .sidebar h1 {
   font-size: 24px;
+  margin-top: 10px;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .nav {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
+  align-items: center;
 }
 
 .nav a {
@@ -62,6 +135,7 @@ body {
   color: black;
   display: block;
   letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
 
 .nav a:hover {
@@ -70,7 +144,10 @@ body {
 
 .nav a.active {
   text-decoration: underline;
-  color: #888;
+  color: #555;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: 5px;
 }
 
 /* Main content */
@@ -101,34 +178,13 @@ body {
   width: 100%;
 }
 
-body.project-page .footer {
-  text-align: center;
-  justify-content: center;
-  display: flex;
-}
-
-body.index-page .main {
-  justify-content: space-between;
-}
-
-body.index-page .content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-body.index-page .footer {
-  margin-top: 60px;
-  align-self: flex-start;
-}
-
 .tagline {
   font-weight: 600;
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
   color: #111;
   font-family: 'Segoe UI', sans-serif;
+  transition: color 0.3s ease;
 }
 
 /* Projects Section Styling */
@@ -179,6 +235,7 @@ body.index-page .footer {
   margin: 0;
   font-size: 0.9rem;
   color: #555;
+  transition: color 0.3s ease;
 }
 
 .hamburger {
@@ -265,132 +322,7 @@ body.index-page .footer {
   height: 20px;
 }
 
-/* Responsive Mobile Layout */
-@media (max-width: 768px) {
-  body {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .sidebar {
-    width: 100%;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: none;
-    text-align: center;
-  }
-
-  .logo {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 10px;
-  }
-
-  .sidebar h1 {
-    font-size: 24px;
-    margin: 10px 0;
-    letter-spacing: 1px;
-  }
-
-  .hamburger {
-    display: block;
-    font-size: 24px;
-    margin: 20px 0;
-    cursor: pointer;
-  }
-
-  .nav {
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 10px;
-    text-align: center;
-  }
-
-  .nav.active {
-    display: flex;
-  }
-
-  .nav a {
-    font-weight: bold;
-    color: black;
-    text-decoration: none;
-  }
-
-  .main {
-    padding: 30px 20px;
-    width: 100%;
-    text-align: center;
-    align-items: center;
-  }
-
-  .content {
-    max-width: 700px;
-    margin: auto;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-section {
-    flex-direction: column;
-    padding: 20px;
-    align-items: center;
-  }
-
-  .contact-info,
-  .contact-form {
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-  }
-
-  .contact-form button {
-    width: 100%;
-    max-width: 200px;
-    margin: 20px auto 0;
-  }
-
-  .footer {
-    margin-top: 40px;
-    font-size: 0.8rem;
-    text-align: center;
-  }
-}
-
-/* Existing CSS remains unchanged above */
-
 /* PEOPLE PAGE SECTION */
-.people-page {
-  display: flex;
-  flex-direction: row;
-  min-height: 100vh;
-}
-
-.sidebar {
-  width: 200px;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-right: 1px solid #ddd;
-  flex-shrink: 0;
-}
-
-.main {
-  flex-grow: 1;
-  padding: 60px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .people-section {
   display: flex;
   flex-wrap: wrap;
@@ -433,6 +365,8 @@ body.index-page .footer {
   font-weight: 900;
   text-transform: uppercase;
   margin-top: 0.5rem;
+  color: #111;
+  transition: color 0.3s ease;
 }
 
 .person-known {
@@ -440,22 +374,97 @@ body.index-page .footer {
   color: #222;
   margin-top: 0.25rem;
   font-style: italic;
+  transition: color 0.3s ease;
 }
 
+/* Responsive Mobile Layout */
 @media (max-width: 768px) {
-  .people-page {
+  body {
     flex-direction: column;
-    padding: 30px 20px;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .sidebar {
     width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     padding: 20px;
-    border-right: none;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    text-align: center;
     border-bottom: 1px solid #ddd;
+  }
+
+  .logo {
+    width: 180px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.shrink .logo {
+    transform: scale(0.85);
+  }
+
+  .sidebar h1 {
+    font-size: 24px;
+    margin: 10px 0;
+    letter-spacing: 1px;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 24px;
+    margin: 20px 0;
+    cursor: pointer;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .main {
+    padding: 30px 20px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .content {
+    max-width: 700px;
+    margin: auto;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-section {
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .contact-form button {
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto 0;
   }
 
   .people-section {
@@ -467,4 +476,22 @@ body.index-page .footer {
     width: 150px;
     height: 150px;
   }
+
+  .footer {
+    margin-top: 40px;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+/* Shrink effect on scroll for mobile */
+@media (max-width: 768px) {
+  window.addEventListener('scroll', () => {
+    const sidebar = document.querySelector('.sidebar');
+    if (window.scrollY > 50) {
+      sidebar.classList.add('shrink');
+    } else {
+      sidebar.classList.remove('shrink');
+    }
+  });
 }

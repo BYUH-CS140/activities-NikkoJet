@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ARCHIVision</title>
+  <title>ABOUT | ARCHIVision</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="responsive-page">
   <div class="sidebar">
-    <div class="logo"></div>
-    <h1>ARCHIVision</h1>
-    <div class="hamburger">&#9776;</div>
-    <div class="nav">
+    <div class="brand">
+      <div class="logo">
+        <img src="images/archivision.png" alt="ARCHIVision Logo">
+      </div>
+      <h1>ARCHIVision</h1>
+    </div>
+    <div class="hamburger" aria-label="Toggle navigation">&#9776;</div>
+    <div class="nav" aria-label="Main navigation">
       <a href="index.html" class="active">ABOUT</a>
       <a href="project.html">PROJECTS</a>
       <a href="people.html">PEOPLE</a>
@@ -23,13 +27,22 @@
       <p class="tagline">Turn your VISION into REALITY.</p>
       <p><strong>ARCHIVision</strong> is a digital platform where architects showcase their portfolios, making it easier for people to find the perfect architect for their dream home or space. We believe great design begins with the right connection.</p><br>
       <p>Our platform brings together diverse architectural styles, philosophies, and talent from around the world. Whether you're seeking bold modernisms, sustainable solutions, or timeless classics - ARCHIVision turns your ideas into reality through the right creative and trusted partnership.</p><br>
-      <p>By combining innovative design with practicval tools, <strong>ARCHIVision</strong> helps architects share their work and helps clients discover their future architect with ease.</p>
+      <p>By combining innovative design with practical tools, <strong>ARCHIVision</strong> helps architects share their work and helps clients discover their future architect with ease.</p>
       <div class="footer">© 2025 ARCHIVision. All rights reserved.</div>
     </div>
   </div>
   <script>
     document.querySelector('.hamburger')?.addEventListener('click', () => {
       document.querySelector('.nav')?.classList.toggle('active');
+    });
+
+    window.addEventListener('scroll', () => {
+      const sidebar = document.querySelector('.sidebar');
+      if (window.scrollY > 10) {
+        sidebar.classList.add('shrink');
+      } else {
+        sidebar.classList.remove('shrink');
+      }
     });
   </script>
 </body>
