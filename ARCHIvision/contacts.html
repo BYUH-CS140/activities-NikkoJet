@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CONTACT | ARCHIVision</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="responsive-page">
 
@@ -37,9 +37,9 @@
         </div>
       </div>
 
-      <!-- Contact Form with Validation -->
-      <form class="contact-form" id="feedbackForm" action="scripts/save_form.php" method="POST" onsubmit="return validateForm();" novalidate>
-        <div id="formErrors" class="error-messages"></div>
+      <!-- Contact Form -->
+      <form class="contact-form" id="feedbackForm" novalidate>
+        <div id="formErrors" class="error-messages" style="color: red; margin-bottom: 10px;"></div>
 
         <label for="name">Your name</label>
         <input type="text" id="name" name="name" required>
@@ -53,9 +53,9 @@
         <button type="submit">SEND</button>
       </form>
 
-      <!-- Thank You Message -->
-      <div id="thankYouMessage" style="display: none; color: green; margin-top: 10px;">
-        Thank you! Your message has been submitted.
+      <!-- Success Message -->
+      <div id="thankYouMessage" style="display: none; color: lightgreen; margin-top: 15px; font-weight: bold;">
+        Thank you! Your message has been received.
       </div>
     </section>
 
@@ -75,10 +75,6 @@
 
     window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('loaded');
-
-      if (window.location.search.includes("success=true")) {
-        document.getElementById("thankYouMessage").style.display = "block";
-      }
     });
 
     document.querySelectorAll('a').forEach(link => {
@@ -95,7 +91,45 @@
     });
   </script>
 
-  <!-- Form Validation Script -->
-  <script src="scripts/form-validation.js"></script>
+  <!-- Form Validation + Local Storage -->
+  <script>
+    function validateForm() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const errors = [];
+
+      if (name.length < 2) {
+        errors.push("Please enter a valid name.");
+      }
+
+      if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
+        errors.push("Please enter a valid email.");
+      }
+
+      if (message.length < 5) {
+        errors.push("Please enter a message at least 5 characters long.");
+      }
+
+      const errorDiv = document.getElementById("formErrors");
+      errorDiv.innerHTML = errors.join("<br>");
+
+      if (errors.length === 0) {
+        const messages = JSON.parse(localStorage.getItem("archivisionMessages") || "[]");
+        messages.push({ name, email, message, date: new Date().toISOString() });
+        localStorage.setItem("archivisionMessages", JSON.stringify(messages));
+
+        document.getElementById("thankYouMessage").style.display = "block";
+        document.getElementById("feedbackForm").reset();
+      }
+
+      return false;
+    }
+
+    document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      validateForm();
+    });
+  </script>
 </body>
 </html>
