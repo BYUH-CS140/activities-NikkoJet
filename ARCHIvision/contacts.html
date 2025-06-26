@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CONTACT | ARCHIVision</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="responsive-page">
 
@@ -15,7 +15,7 @@
       </div>
       <h1>ARCHIVision</h1>
     </div>
-    <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>    
+    <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
     <nav class="nav" id="sidebarNav" aria-label="Main navigation">
       <a href="home.html">HOME</a>
       <a href="index.html">ABOUT</a>
@@ -98,6 +98,7 @@
       const email = document.getElementById("email").value.trim();
       const message = document.getElementById("message").value.trim();
       const errors = [];
+      const errorDiv = document.getElementById("formErrors");
 
       if (name.length < 2) {
         errors.push("Please enter a valid name.");
@@ -111,14 +112,15 @@
         errors.push("Please enter a message at least 5 characters long.");
       }
 
-      const errorDiv = document.getElementById("formErrors");
       errorDiv.innerHTML = errors.join("<br>");
 
       if (errors.length === 0) {
+        // Store message in localStorage
         const messages = JSON.parse(localStorage.getItem("archivisionMessages") || "[]");
         messages.push({ name, email, message, date: new Date().toISOString() });
         localStorage.setItem("archivisionMessages", JSON.stringify(messages));
 
+        // Show thank you
         document.getElementById("thankYouMessage").style.display = "block";
         document.getElementById("feedbackForm").reset();
       }
@@ -126,7 +128,7 @@
       return false;
     }
 
-    document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+    document.getElementById("feedbackForm").addEventListener("submit", function (e) {
       e.preventDefault();
       validateForm();
     });
