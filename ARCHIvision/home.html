@@ -69,8 +69,17 @@
     </div>
   </section>
 
+  <!-- Tetris Game Section -->
+  <section class="tetris-game">
+    <h2>Mini Tetris Game</h2>
+    <p>Score: <span id="tetrisScore">0</span></p>
+    <button id="startTetris">Start Game</button>
+    <canvas id="tetrisCanvas" width="240" height="400" style="background: #111; display: block; margin: 20px auto;"></canvas>
+  </section>
+
   <footer class="footer">© 2025 ARCHIVision. All rights reserved.</footer>
 
+  <!-- Main Home Page Scripts -->
   <script>
     // Hamburger toggle for mobile nav
     document.getElementById('hamburger').addEventListener('click', () => {
@@ -111,5 +120,7 @@
     });
   </script>
 
+  <!-- Tetris Game Script -->
+  <script src="script/architecture-game.js"></script>
 </body>
 </html>

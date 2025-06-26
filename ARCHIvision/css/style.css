@@ -1707,4 +1707,303 @@ body.loaded {
 .hamburger-home:hover {
   opacity: 0.7;
 }
+/* Hide hamburger on large screens */
+.hamburger,
+.hamburger-home {
+  display: none;
+}
+
+/* Show hamburger only on small screens (mobile) */
+@media (max-width: 768px) {
+  .hamburger,
+  .hamburger-home {
+    display: flex; /* or block if not using flexbox */
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: inherit;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav {
+    display: none; /* hide nav by default on mobile */
+  }
+
+  .nav.active {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+/* Base body colors for light/dark mode */
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  background-color: white;
+  color: #111;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111;
+    color: #eee;
+  }
+}
+
+/* Hamburger styling — works in both modes */
+.hamburger,
+.hamburger-home {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: inherit; /* crucial for adapting to theme */
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Show hamburger on small screens only */
+@media (max-width: 768px) {
+  .hamburger,
+  .hamburger-home {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav.active {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+/* Default styling for desktop - already applied */
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Mobile screen adjustments */
+@media (max-width: 768px) {
+  .site-branding {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-branding img {
+    width: 120px; /* Increase size */
+    height: auto;
+  }
+
+  .site-title {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    display: block;
+  }
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.site-branding img {
+  transition: all 0.5s ease-in-out;
+}
+
+.site-title {
+  transition: all 0.5s ease-in-out;
+}
+
+/* Mobile Responsive + Animated Transition */
+@media (max-width: 768px) {
+  .site-branding {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-branding img {
+    width: 120px;
+    height: auto;
+  }
+
+  .site-title {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    display: block;
+  }
+}
+
+/* Move content down when nav is open on mobile */
+@media (max-width: 768px) {
+  body.nav-open .home-caption {
+    transform: translateY(120px); /* Adjust based on nav height */
+  }
+
+  .home-caption {
+    transition: transform 0.3s ease;
+  }
+
+  .home-nav.active {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    z-index: 999;
+  }
+
+  .home-nav a {
+    color: white;
+    font-size: 1.25rem;
+  }
+}
+
+/* Tetris Game Section */
+.tetris-game {
+  padding: 4rem 1rem;
+  text-align: center;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.tetris-game h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.tetris-game #startTetris {
+  background: #ffcc00;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.tetris-game #startTetris:hover {
+  background: #e6b800;
+}
+
+canvas#tetrisCanvas {
+  background: #111;
+  border: 2px solid #333;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Tetris Game Section */
+#tetrisSection {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #f9f9f9;
+  color: #111;
+}
+
+@media (prefers-color-scheme: dark) {
+  #tetrisSection {
+    background: #111;
+    color: #eee;
+  }
+}
+
+#tetrisCanvas {
+  border: 2px solid #555;
+  background: #000;
+  margin: 1rem auto;
+  display: block;
+}
+
+#startTetris {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#startTetris:hover {
+  background: #555;
+}
+
+#score {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Tetris Game Styles */
+#tetrisContainer {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: #111;
+  color: white;
+}
+
+#tetrisContainer h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#tetrisScore {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#startTetris {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #FFC107;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  color: #111;
+  font-weight: bold;
+}
+
+#startTetris:hover {
+  background-color: #e0a800;
+}
+
+canvas#tetrisCanvas {
+  border: 1px solid #666;
+  background-color: black;
+  display: block;
+  margin: 0 auto;
+  width: 240px;
+  height: 400px;
+}
+
 
